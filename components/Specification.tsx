@@ -65,7 +65,7 @@ export default function Specification() {
 
         <div className="mt-10 p-5 rounded border border-[#4ade80]/10 bg-[#4ade80]/5">
           <p className="text-xs text-zinc-400 font-mono leading-relaxed">
-            <span className="text-[#4ade80]">// Note:</span> The specification describes{" "}
+            <span className="text-[#4ade80]">Note:</span> The specification describes{" "}
             <em>semantic requirements</em>. It does not mandate API surface or
             implementation details. QBCore.Functions.GetPlayer(source) is an
             implementation API, not a specification concept.
