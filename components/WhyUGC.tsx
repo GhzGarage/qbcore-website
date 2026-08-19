@@ -23,7 +23,7 @@ export default function WhyUGC() {
           <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
             Why UGC Platforms?
           </p>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-5">
+          <h2 className="font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             Focus on roleplay architecture,
             <br />
             <span className="text-zinc-400">not runtime engineering.</span>
@@ -74,7 +74,7 @@ export default function WhyUGC() {
 
         {/* Selective expansion */}
         <div className="rounded border border-white/[0.06] p-7">
-          <h3 className="text-white font-medium mb-2">Selective expansion.</h3>
+          <h3 className="font-brand text-white font-semibold mb-2">Selective expansion.</h3>
           <p className="text-zinc-500 text-sm leading-relaxed mb-5">
             QBCore does not need to exist on every possible platform. A future platform
             should only receive a QBCore implementation where it genuinely makes sense.

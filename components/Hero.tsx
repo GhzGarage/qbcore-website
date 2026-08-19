@@ -1,3 +1,5 @@
+import QBMark from "./QBMark";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden grid-bg">
@@ -20,11 +22,14 @@ export default function Hero() {
         </div>
 
         {/* Main heading */}
-        <h1 className="font-mono text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-none">
-          QB<span className="text-[#f43f5e]">CORE</span>
+        <h1 className="mb-6 flex items-center justify-center gap-3 sm:gap-4">
+          <QBMark className="h-12 sm:h-14 md:h-16 w-auto text-[#dc143c] shrink-0" />
+          <span className="font-brand text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white lowercase leading-none">
+            qbcore
+          </span>
         </h1>
 
-        <p className="text-xl sm:text-2xl md:text-3xl text-zinc-300 font-light leading-relaxed mb-4">
+        <p className="font-brand text-xl sm:text-2xl md:text-3xl text-zinc-300 font-light leading-relaxed mb-4">
           One philosophy.
           <br />
           Multiple platforms.

@@ -7,7 +7,7 @@ export default function DomainArchitecture() {
             <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
               Domain Architecture
             </p>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-6 leading-tight">
+            <h2 className="font-brand text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
               Moving away from the monolithic PlayerData model.
             </h2>
             <p className="text-zinc-400 leading-relaxed mb-4">

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import QBMark from "./QBMark";
 
 const links = [
   { label: "Platforms", href: "#platforms" },
@@ -29,8 +30,9 @@ export default function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
-          <span className="font-mono text-sm font-bold tracking-[0.2em] text-[#f43f5e] uppercase group-hover:text-white transition-colors">
-            QB<span className="text-white">CORE</span>
+          <QBMark className="h-6 w-auto text-[#dc143c]" />
+          <span className="font-brand text-lg font-extrabold tracking-tight text-white lowercase">
+            qbcore
           </span>
         </a>
 

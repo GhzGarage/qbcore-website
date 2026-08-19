@@ -1,3 +1,5 @@
+import QBMark from "./QBMark";
+
 const links = [
   {
     title: "Framework",
@@ -26,9 +28,12 @@ export default function Footer() {
         <div className="grid sm:grid-cols-3 gap-10 mb-14">
           {/* Brand */}
           <div>
-            <p className="font-mono text-sm font-bold tracking-[0.2em] text-[#f43f5e] uppercase mb-3">
-              QB<span className="text-white">CORE</span>
-            </p>
+            <div className="flex items-center gap-2 mb-3">
+              <QBMark className="h-5 w-auto text-[#dc143c]" />
+              <span className="font-brand text-base font-extrabold tracking-tight text-white lowercase">
+                qbcore
+              </span>
+            </div>
             <p className="text-zinc-600 text-xs leading-relaxed max-w-xs">
               Open-source roleplay framework ecosystem. One philosophy. Multiple platforms. Built for roleplay.
             </p>

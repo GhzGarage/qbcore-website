@@ -63,7 +63,7 @@ export default function Roadmap() {
           <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
             Roadmap
           </p>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-5">
+          <h2 className="font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             Where QBCore is headed.
           </h2>
           <p className="max-w-xl mx-auto text-zinc-500 leading-relaxed text-sm">
@@ -86,7 +86,7 @@ export default function Roadmap() {
                     {item.label}
                   </span>
                 </div>
-                <h3 className="text-white font-semibold mb-4">{item.phase}</h3>
+                <h3 className="font-brand text-white font-bold mb-4">{item.phase}</h3>
                 <ul className="space-y-2">
                   {item.points.map((pt) => (
                     <li key={pt} className="flex items-start gap-2.5">

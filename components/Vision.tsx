@@ -16,7 +16,7 @@ export default function Vision() {
         </p>
 
         {/* Emotional conclusion */}
-        <div className="space-y-3 mb-12">
+        <div className="font-brand space-y-3 mb-12">
           <p className="text-2xl sm:text-3xl text-zinc-500 font-light">
             The languages will change.
           </p>
@@ -26,7 +26,7 @@ export default function Vision() {
           <p className="text-2xl sm:text-3xl text-zinc-300 font-light">
             The games will change.
           </p>
-          <p className="text-2xl sm:text-3xl text-white font-semibold">
+          <p className="text-2xl sm:text-3xl text-white font-extrabold">
             The QBCore philosophy shouldn&apos;t.
           </p>
         </div>
