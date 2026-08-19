@@ -4,7 +4,7 @@ export default function WhatIsQBCore() {
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="font-mono text-xs text-[#4ade80] tracking-widest uppercase mb-4">
+            <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
               What is QBCore?
             </p>
             <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight mb-6">
@@ -25,8 +25,8 @@ export default function WhatIsQBCore() {
 
           {/* Layer diagram */}
           <div className="space-y-2 font-mono text-sm">
-            <div className="rounded border border-[#4ade80]/20 bg-[#4ade80]/5 p-5">
-              <p className="text-[#4ade80] text-xs tracking-widest uppercase font-bold mb-2">Platform</p>
+            <div className="rounded border border-[#f43f5e]/20 bg-[#f43f5e]/5 p-5">
+              <p className="text-[#f43f5e] text-xs tracking-widest uppercase font-bold mb-2">Platform</p>
               <p className="text-zinc-400 text-xs leading-relaxed">
                 Runtime · Networking · Hosting · Identity · Tools · Players
               </p>

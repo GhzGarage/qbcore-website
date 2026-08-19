@@ -3,9 +3,9 @@ const platforms = [
     name: "FiveM",
     lang: "Lua",
     note: "FiveM APIs",
-    color: "text-[#4ade80]",
-    border: "border-[#4ade80]/20",
-    bg: "bg-[#4ade80]/5",
+    color: "text-[#f43f5e]",
+    border: "border-[#f43f5e]/20",
+    bg: "bg-[#f43f5e]/5",
   },
   {
     name: "Roblox",
@@ -30,7 +30,7 @@ export default function CrossPlatform() {
     <section className="py-20 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
-          <p className="font-mono text-xs text-[#4ade80] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
             Cross-Platform Philosophy
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-5">
@@ -49,7 +49,7 @@ export default function CrossPlatform() {
         {/* Philosophy statement */}
         <div className="mb-12 p-5 rounded border border-white/[0.06] bg-white/[0.02] text-center">
           <p className="font-mono text-sm text-zinc-300">
-            <span className="text-[#4ade80]">Standardize semantics</span>,{" "}
+            <span className="text-[#f43f5e]">Standardize semantics</span>,{" "}
             <span className="text-zinc-500">not syntax.</span>
           </p>
         </div>

@@ -20,7 +20,7 @@ export default function WhyUGC() {
     <section className="py-28 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <p className="font-mono text-xs text-[#4ade80] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
             Why UGC Platforms?
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-5">
@@ -50,8 +50,8 @@ export default function WhyUGC() {
             </ul>
           </div>
 
-          <div className="rounded border border-[#4ade80]/10 bg-[#4ade80]/[0.03] p-7">
-            <p className="font-mono text-xs text-[#4ade80] uppercase tracking-widest mb-5">
+          <div className="rounded border border-[#f43f5e]/10 bg-[#f43f5e]/[0.03] p-7">
+            <p className="font-mono text-xs text-[#f43f5e] uppercase tracking-widest mb-5">
               QBCore focuses on
             </p>
             <ul className="space-y-3">
@@ -64,7 +64,7 @@ export default function WhyUGC() {
                 "The QBCore Specification",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-zinc-300 text-sm">
-                  <span className="w-1 h-1 rounded-full bg-[#4ade80]/60 shrink-0" />
+                  <span className="w-1 h-1 rounded-full bg-[#f43f5e]/60 shrink-0" />
                   {item}
                 </li>
               ))}
@@ -82,7 +82,7 @@ export default function WhyUGC() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {criteria.map((c) => (
               <div key={c} className="flex items-start gap-2.5">
-                <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4ade80]/50 shrink-0" />
+                <span className="mt-1.5 w-1 h-1 rounded-full bg-[#f43f5e]/50 shrink-0" />
                 <p className="text-zinc-500 text-xs">{c}</p>
               </div>
             ))}

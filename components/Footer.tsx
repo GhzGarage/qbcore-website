@@ -4,17 +4,17 @@ const links = [
     items: [
       { label: "Platforms", href: "#platforms" },
       { label: "Specification", href: "#specification" },
-      { label: "Domain Architecture", href: "#" },
-      { label: "Design Principles", href: "#" },
+      { label: "Domain Architecture", href: "#domain-architecture" },
+      { label: "Design Principles", href: "#principles" },
     ],
   },
   {
     title: "Resources",
     items: [
-      { label: "Documentation", href: "#" },
+      { label: "Documentation", href: "https://docs.qbcore.org/", external: true },
       { label: "GitHub", href: "https://github.com/qbcore-framework", external: true },
-      { label: "Community", href: "#" },
-      { label: "Roadmap", href: "#" },
+      { label: "Community", href: "https://discord.gg/qbcore", external: true },
+      { label: "Roadmap", href: "#roadmap" },
     ],
   },
 ];
@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-3 gap-10 mb-14">
           {/* Brand */}
           <div>
-            <p className="font-mono text-sm font-bold tracking-[0.2em] text-[#4ade80] uppercase mb-3">
+            <p className="font-mono text-sm font-bold tracking-[0.2em] text-[#f43f5e] uppercase mb-3">
               QB<span className="text-white">CORE</span>
             </p>
             <p className="text-zinc-600 text-xs leading-relaxed max-w-xs">

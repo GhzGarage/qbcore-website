@@ -1,6 +1,8 @@
 # QBCore Website
 
-This site is built with [Next.js](https://nextjs.org) and is configured to deploy to GitHub Pages as a static export.
+This is the marketing/spec site for **qbcore.org** — QBCore's evolution from a FiveM
+framework into a cross-platform open-source roleplay ecosystem (FiveM → Roblox → UEFN).
+It's built with [Next.js](https://nextjs.org) and deploys to GitHub Pages as a static export.
 
 ## Local development
 
@@ -17,9 +19,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - `next.config.ts` uses `output: "export"` so `npm run build` writes a static site to `out/`
 - `.github/workflows/deploy-pages.yml` builds that static export and deploys it to GitHub Pages
-- The workflow sets `GITHUB_PAGES_BASE_PATH` to the repository name so project pages work at `https://<user>.github.io/<repo>/`
-
-If you switch to a custom domain or user site, update or remove the `GITHUB_PAGES_BASE_PATH` value in the workflow.
+  on every push to `main`
+- `public/CNAME` pins the site to the custom domain **qbcore.org**. Because this is an apex/root
+  custom domain, the workflow does **not** set a `basePath` — the site is built to serve from `/`.
+  In your repo settings (Settings → Pages), make sure the custom domain is set to `qbcore.org` and
+  your DNS points the apex record at GitHub Pages.
+- If you ever need to fall back to the default `https://<user>.github.io/<repo>/` URL instead
+  (no custom domain), remove `public/CNAME` and set `GITHUB_PAGES_BASE_PATH: /${{ github.event.repository.name }}`
+  as an env var on the build step again.
 
 ## Production build
 
@@ -27,7 +34,13 @@ If you switch to a custom domain or user site, update or remove the `GITHUB_PAGE
 npm run build
 ```
 
-After the build finishes, the static output is available in `/home/runner/work/qbcore-website/qbcore-website/out`.
+After the build finishes, the static output is available in `out/`.
+
+## SEO / social
+
+- `app/robots.ts` and `app/sitemap.ts` generate `robots.txt` and `sitemap.xml` at build time
+- `app/icon.svg`, `app/favicon.ico`, and `app/apple-icon.png` provide the site favicon/touch icon
+- `public/og-image.png` is used for Open Graph / Twitter card previews (see `app/layout.tsx`)
 
 ## Notes
 

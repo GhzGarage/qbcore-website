@@ -39,10 +39,10 @@ const principles = [
 
 export default function Principles() {
   return (
-    <section className="py-28 px-6 border-t border-white/[0.04] grid-bg">
+    <section id="principles" className="py-28 px-6 border-t border-white/[0.04] grid-bg">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <p className="font-mono text-xs text-[#4ade80] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
             Design Principles
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-5">

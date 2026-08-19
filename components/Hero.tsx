@@ -6,22 +6,22 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(74,222,128,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(244,63,94,0.04) 0%, transparent 70%)",
         }}
       />
 
       <div className="relative z-10 max-w-4xl mx-auto">
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded border border-[#4ade80]/20 bg-[#4ade80]/5">
-          <span className="block w-1.5 h-1.5 rounded-full bg-[#4ade80] animate-pulse" />
-          <span className="font-mono text-xs text-[#4ade80] tracking-widest uppercase">
+        <div className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded border border-[#f43f5e]/20 bg-[#f43f5e]/5">
+          <span className="block w-1.5 h-1.5 rounded-full bg-[#f43f5e] animate-pulse" />
+          <span className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase">
             Open Source Framework Ecosystem
           </span>
         </div>
 
         {/* Main heading */}
         <h1 className="font-mono text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-none">
-          QB<span className="text-[#4ade80]">CORE</span>
+          QB<span className="text-[#f43f5e]">CORE</span>
         </h1>
 
         <p className="text-xl sm:text-2xl md:text-3xl text-zinc-300 font-light leading-relaxed mb-4">
@@ -41,7 +41,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#specification"
-            className="inline-flex items-center justify-center h-12 px-7 rounded border border-[#4ade80]/40 bg-[#4ade80]/10 text-[#4ade80] text-sm font-medium hover:bg-[#4ade80]/20 hover:border-[#4ade80]/60 transition-all"
+            className="inline-flex items-center justify-center h-12 px-7 rounded border border-[#f43f5e]/40 bg-[#f43f5e]/10 text-[#f43f5e] text-sm font-medium hover:bg-[#f43f5e]/20 hover:border-[#f43f5e]/60 transition-all"
           >
             Explore the Specification
           </a>

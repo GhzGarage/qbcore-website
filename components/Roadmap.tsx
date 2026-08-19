@@ -36,10 +36,10 @@ const items = [
 
 const statusStyles: Record<string, { dot: string; text: string; border: string; bg: string }> = {
   complete: {
-    dot: "bg-[#4ade80]",
-    text: "text-[#4ade80]",
-    border: "border-[#4ade80]/20",
-    bg: "bg-[#4ade80]/5",
+    dot: "bg-[#f43f5e]",
+    text: "text-[#f43f5e]",
+    border: "border-[#f43f5e]/20",
+    bg: "bg-[#f43f5e]/5",
   },
   active: {
     dot: "bg-sky-400 animate-pulse",
@@ -57,10 +57,10 @@ const statusStyles: Record<string, { dot: string; text: string; border: string; 
 
 export default function Roadmap() {
   return (
-    <section className="py-28 px-6 border-t border-white/[0.04]">
+    <section id="roadmap" className="py-28 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <p className="font-mono text-xs text-[#4ade80] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
             Roadmap
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-5">

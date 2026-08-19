@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 const links = [
   { label: "Platforms", href: "#platforms" },
   { label: "Specification", href: "#specification" },
-  { label: "Documentation", href: "#" },
+  { label: "Documentation", href: "https://docs.qbcore.org/", external: true },
   { label: "GitHub", href: "https://github.com/qbcore-framework", external: true },
-  { label: "Community", href: "#" },
+  { label: "Community", href: "https://discord.gg/qbcore", external: true },
 ];
 
 export default function Nav() {
@@ -29,7 +29,7 @@ export default function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
-          <span className="font-mono text-sm font-bold tracking-[0.2em] text-[#4ade80] uppercase group-hover:text-white transition-colors">
+          <span className="font-mono text-sm font-bold tracking-[0.2em] text-[#f43f5e] uppercase group-hover:text-white transition-colors">
             QB<span className="text-white">CORE</span>
           </span>
         </a>

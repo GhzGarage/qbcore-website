@@ -2,15 +2,15 @@ const platforms = [
   {
     name: "FiveM",
     status: "Established",
-    statusColor: "text-[#4ade80]",
-    statusBorder: "border-[#4ade80]/20",
-    statusBg: "bg-[#4ade80]/10",
+    statusColor: "text-[#f43f5e]",
+    statusBorder: "border-[#f43f5e]/20",
+    statusBg: "bg-[#f43f5e]/10",
     lang: "Lua + FiveM APIs",
     tagline: "FiveM built the foundation.",
     description:
       "FiveM is the foundation of QBCore. It is where the framework established its architecture, ecosystem, concepts, and developer community. The expansion of QBCore does not mean FiveM is being abandoned or replaced.",
-    cardBorder: "border-[#4ade80]/15",
-    accentColor: "text-[#4ade80]",
+    cardBorder: "border-[#f43f5e]/15",
+    accentColor: "text-[#f43f5e]",
   },
   {
     name: "Roblox",
@@ -45,7 +45,7 @@ export default function Platforms() {
     <section id="platforms" className="py-28 px-6 border-t border-white/[0.04] grid-bg">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <p className="font-mono text-xs text-[#4ade80] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
             Platforms
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-5">

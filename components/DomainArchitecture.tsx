@@ -1,10 +1,10 @@
 export default function DomainArchitecture() {
   return (
-    <section className="py-28 px-6 border-t border-white/[0.04]">
+    <section id="domain-architecture" className="py-28 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="font-mono text-xs text-[#4ade80] tracking-widest uppercase mb-4">
+            <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
               Domain Architecture
             </p>
             <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-6 leading-tight">

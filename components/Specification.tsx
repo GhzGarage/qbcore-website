@@ -36,7 +36,7 @@ export default function Specification() {
     <section id="specification" className="py-28 px-6 border-t border-white/[0.04] grid-bg">
       <div className="max-w-5xl mx-auto">
         <div className="mb-16">
-          <p className="font-mono text-xs text-[#4ade80] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
             QBCore Specification
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-5 max-w-2xl">
@@ -63,9 +63,9 @@ export default function Specification() {
           ))}
         </div>
 
-        <div className="mt-10 p-5 rounded border border-[#4ade80]/10 bg-[#4ade80]/5">
+        <div className="mt-10 p-5 rounded border border-[#f43f5e]/10 bg-[#f43f5e]/5">
           <p className="text-xs text-zinc-400 font-mono leading-relaxed">
-            <span className="text-[#4ade80]">Note:</span> The specification describes{" "}
+            <span className="text-[#f43f5e]">Note:</span> The specification describes{" "}
             <em>semantic requirements</em>. It does not mandate API surface or
             implementation details. QBCore.Functions.GetPlayer(source) is an
             implementation API, not a specification concept.
