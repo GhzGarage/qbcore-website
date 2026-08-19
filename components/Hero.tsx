@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 mb-10 px-3 py-1.5 rounded border border-accent/20 bg-accent/5">
             <span className="block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             <span className="font-mono text-xs text-accent tracking-widest uppercase">
-              Open Source Framework Ecosystem
+              Open-Source Framework Ecosystem
             </span>
           </div>
 
@@ -53,7 +53,8 @@ export default function Hero() {
 
           <p className="text-pretty mt-8 max-w-2xl mx-auto text-base sm:text-lg text-zinc-500 leading-relaxed">
             QBCore began with FiveM. Now it is evolving into a cross-platform
-            standard for building roleplay experiences across UGC ecosystems.
+            standard for building roleplay experiences across user-generated
+            content (UGC) ecosystems.
           </p>
 
           {/* CTAs */}

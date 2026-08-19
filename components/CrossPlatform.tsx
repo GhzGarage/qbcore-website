@@ -41,7 +41,7 @@ export default function CrossPlatform() {
           <p className="text-pretty max-w-2xl mx-auto text-zinc-500 leading-relaxed">
             Cross-platform does not mean one codebase running everywhere. Every
             platform receives its own native QBCore implementation using that
-            platform&apos;s language, APIs, networking model, and tooling. The shared layer
+            platform&rsquo;s language, APIs, networking model, and tooling. The shared layer
             is the QBCore philosophy, concepts, and specification.
           </p>
         </div>

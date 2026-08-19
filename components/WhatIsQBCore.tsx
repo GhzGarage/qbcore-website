@@ -5,7 +5,7 @@ export default function WhatIsQBCore() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="reveal">
             <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
-              What is QBCore?
+              What Is QBCore?
             </p>
             <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">
               Roleplay architecture sitting on top of the platform.

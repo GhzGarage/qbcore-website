@@ -27,7 +27,7 @@ export default function Vision() {
             The games will change.
           </p>
           <p className="text-2xl sm:text-3xl text-white font-extrabold">
-            The QBCore philosophy shouldn&apos;t.
+            The QBCore philosophy shouldn&rsquo;t.
           </p>
         </div>
 

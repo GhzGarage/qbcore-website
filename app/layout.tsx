@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Roblox roleplay",
     "UEFN Verse",
     "roleplay framework",
-    "open source game framework",
+    "open-source game framework",
     "UGC platform development",
   ],
   authors: [{ name: "QBCore" }],

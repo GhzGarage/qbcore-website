@@ -21,7 +21,7 @@ const platforms = [
     lang: "Luau + Roblox Services",
     tagline: "The first major expansion.",
     description:
-      "Roblox is the first major QBCore expansion outside FiveM. It is implemented natively around Roblox services, networking, persistence, avatars, and development patterns. It is not a port of FiveM's Lua code. The architecture feels familiar to QBCore developers while feeling natural to Roblox developers.",
+      "Roblox is the first major QBCore expansion outside FiveM. It is implemented natively around Roblox services, networking, persistence, avatars, and development patterns. It is not a port of FiveM’s Lua code. The architecture feels familiar to QBCore developers while remaining natural to Roblox developers.",
     cardBorder: "border-sky-400/15",
     accentColor: "text-sky-400",
   },
@@ -53,7 +53,7 @@ export default function Platforms() {
           </h2>
           <p className="text-pretty max-w-xl mx-auto text-zinc-500 leading-relaxed">
             Each platform receives its own QBCore implementation, built with that
-            platform&apos;s language, APIs, and native patterns.
+            platform&rsquo;s language, APIs, and native patterns.
           </p>
         </div>
 

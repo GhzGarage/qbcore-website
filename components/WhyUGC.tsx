@@ -8,11 +8,11 @@ const platformProvides = [
 ];
 
 const criteria = [
-  "Meaningful UGC ecosystem",
+  "The UGC ecosystem is meaningful",
   "Developers can build substantial experiences",
   "Roleplay fits naturally",
   "QBCore provides genuine value",
-  "Platform supports native implementation",
+  "The platform supports native implementation",
 ];
 
 export default function WhyUGC() {
@@ -61,7 +61,7 @@ export default function WhyUGC() {
                 "Accounts & Economy",
                 "Permissions & Authority",
                 "Roleplay Systems Architecture",
-                "The QBCore Specification",
+                "QBCore Specification",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-zinc-300 text-sm">
                   <span className="w-1 h-1 rounded-full bg-accent/60 shrink-0" />

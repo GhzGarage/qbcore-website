@@ -3,7 +3,7 @@ const principles = [
     number: "01",
     title: "Platform Native",
     description:
-      "Use each host ecosystem the way it was designed to be used. Don't fight the platform.",
+      "Use each host ecosystem the way it was designed to be used. Don’t fight the platform.",
   },
   {
     number: "02",
@@ -15,7 +15,7 @@ const principles = [
     number: "03",
     title: "Domain Ownership",
     description:
-      "Each domain owns its state, rules, and mutation contracts. No domain reaches into another's internals.",
+      "Each domain owns its state, rules, and mutation contracts. No domain reaches into another’s internals.",
   },
   {
     number: "04",

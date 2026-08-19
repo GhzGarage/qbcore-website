@@ -17,7 +17,7 @@ export default function DomainArchitecture() {
             </p>
             <p className="text-pretty text-zinc-500 leading-relaxed">
               Domains communicate through documented contracts rather than modifying one
-              another&apos;s internals. This is a deliberate architectural boundary — not a
+              another&rsquo;s internals. This is a deliberate architectural boundary — not a
               stylistic preference.
             </p>
           </div>

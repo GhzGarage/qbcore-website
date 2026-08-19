@@ -40,7 +40,7 @@ export default function Specification() {
             QBCore Specification
           </p>
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5 max-w-2xl">
-            A formal shared specification defining what makes an implementation QBCore.
+            A formal, shared specification defining what makes an implementation QBCore.
           </h2>
           <p className="text-pretty max-w-2xl text-zinc-500 leading-relaxed">
             The specification defines behavior, concepts, guarantees, and boundaries. It
