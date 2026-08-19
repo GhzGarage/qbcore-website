@@ -27,9 +27,9 @@ export default function Hero() {
 
           {/* Orbit diagram — QBCore at the center, FiveM / Roblox / UEFN orbiting it */}
           <div className="orbit-wrap mb-10" aria-hidden="true">
-            <div className="orbit-ring" />
-            <div className="orbit-ring r2" />
-            <div className="orbit-ring r3" />
+            <div className="orbit-ring ring-1" />
+            <div className="orbit-ring ring-2 hidden md:block" />
+            <div className="orbit-ring ring-3 hidden md:block" />
             <div className="orbit-node n1">
               <span className="orbit-node-label">FiveM</span>
             </div>

@@ -325,33 +325,57 @@ body {
    diagram reads clearly either way.
    ------------------------------------------------------------------- */
 .orbit-wrap {
-  --radius: 130px;
+  /* Below md, all three orbit distances collapse to one shared radius —
+     there isn't room on a phone-width screen for three cleanly-separated
+     rings big enough to hold full platform names, so mobile shows one
+     ring (r2/r3 are hidden in markup) rather than a cramped one. At md+,
+     r1/r2/r3 spread out to give FiveM/Roblox/UEFN their own ring, inner
+     to outer, visually reading as a progression. Rings and nodes both
+     read from these same variables, so they can't drift out of sync. */
+  --hub: 72px;
+  --node: 58px;
+  --r1: 78px;
+  --r2: 78px;
+  --r3: 78px;
   position: relative;
-  width: calc(var(--radius) * 2 + 140px);
-  height: calc(var(--radius) * 2 + 140px);
+  width: calc(var(--r3) * 2 + var(--node) + 20px);
+  height: calc(var(--r3) * 2 + var(--node) + 20px);
   margin: 0 auto;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .orbit-wrap {
-    --radius: 170px;
+    --hub: 88px;
+    --node: 68px;
+    --r1: 90px;
+    --r2: 170px;
+    --r3: 250px;
   }
 }
 
 .orbit-ring {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.orbit-ring.r2 {
-  inset: 12%;
+.orbit-ring.ring-1 {
+  width: calc(var(--r1) * 2);
+  height: calc(var(--r1) * 2);
+}
+
+.orbit-ring.ring-2 {
+  width: calc(var(--r2) * 2);
+  height: calc(var(--r2) * 2);
   border-color: color-mix(in oklab, var(--accent) 15%, transparent);
 }
 
-.orbit-ring.r3 {
-  inset: 24%;
+.orbit-ring.ring-3 {
+  width: calc(var(--r3) * 2);
+  height: calc(var(--r3) * 2);
   border-color: rgba(255, 255, 255, 0.06);
 }
 
@@ -361,35 +385,39 @@ body {
   left: 50%;
   width: 0;
   height: 0;
-  transform: rotate(var(--angle)) translateX(var(--radius)) rotate(calc(-1 * var(--angle)));
+  transform: rotate(var(--angle)) translateX(var(--node-radius)) rotate(calc(-1 * var(--angle)));
 }
 
-/* The label is a separate inner element so it can be a pill sized to its
-   own text content (fitting full platform names) while the outer .orbit-node
-   stays a zero-size positioning anchor — keeps the orbit math (rotate /
-   translateX / rotate) independent of label width. */
+/* The label is a separate inner element, centered on the same point the
+   outer .orbit-node's rotate/translateX/rotate math lands on — so it
+   sits exactly on its ring regardless of the label's own size. It's a
+   true circle (not a pill) sized via --node to comfortably fit a full
+   platform name on one line. */
 .orbit-node-label {
   position: absolute;
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
+  width: var(--node);
+  height: var(--node);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 34px;
-  padding: 0 14px;
+  padding: 0 4px;
   white-space: nowrap;
-  border-radius: 999px;
+  border-radius: 50%;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  line-height: 1;
   border: 1px solid;
   backdrop-filter: blur(6px);
 }
 
 .orbit-node.n1 {
   --angle: 0deg;
+  --node-radius: var(--r1);
 }
 .orbit-node.n1 .orbit-node-label {
   color: var(--accent);
@@ -399,6 +427,7 @@ body {
 
 .orbit-node.n2 {
   --angle: 120deg;
+  --node-radius: var(--r2);
 }
 .orbit-node.n2 .orbit-node-label {
   color: #38bdf8;
@@ -408,6 +437,7 @@ body {
 
 .orbit-node.n3 {
   --angle: 240deg;
+  --node-radius: var(--r3);
 }
 .orbit-node.n3 .orbit-node-label {
   color: #a78bfa;
@@ -420,8 +450,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 96px;
-  height: 96px;
+  width: var(--hub);
+  height: var(--hub);
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #1a1a1d, #0a0a0b);
   border: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
@@ -440,10 +470,10 @@ body {
 
   @keyframes orbit-spin {
     from {
-      transform: rotate(var(--angle)) translateX(var(--radius)) rotate(calc(-1 * var(--angle)));
+      transform: rotate(var(--angle)) translateX(var(--node-radius)) rotate(calc(-1 * var(--angle)));
     }
     to {
-      transform: rotate(calc(var(--angle) + 360deg)) translateX(var(--radius))
+      transform: rotate(calc(var(--angle) + 360deg)) translateX(var(--node-radius))
         rotate(calc(-1 * (var(--angle) + 360deg)));
     }
   }
