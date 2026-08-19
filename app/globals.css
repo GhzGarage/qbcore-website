@@ -422,7 +422,7 @@ body {
 .orbit-node.n1 .orbit-node-label {
   color: var(--accent);
   border-color: color-mix(in oklab, var(--accent) 40%, transparent);
-  background: color-mix(in oklab, var(--accent) 8%, transparent);
+  background: color-mix(in oklab, var(--accent) 14%, var(--background) 86%);
 }
 
 .orbit-node.n2 {
@@ -432,7 +432,7 @@ body {
 .orbit-node.n2 .orbit-node-label {
   color: #38bdf8;
   border-color: rgba(56, 189, 248, 0.4);
-  background: rgba(56, 189, 248, 0.08);
+  background: color-mix(in oklab, #38bdf8 14%, var(--background) 86%);
 }
 
 .orbit-node.n3 {
@@ -442,7 +442,7 @@ body {
 .orbit-node.n3 .orbit-node-label {
   color: #a78bfa;
   border-color: rgba(167, 139, 250, 0.4);
-  background: rgba(167, 139, 250, 0.08);
+  background: color-mix(in oklab, #a78bfa 14%, var(--background) 86%);
 }
 
 .orbit-center {
