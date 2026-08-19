@@ -86,14 +86,21 @@ export default function Nav() {
   return (
     <>
       <div className="scroll-progress" aria-hidden="true" />
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-background/90 backdrop-blur border-b border-white/[0.06]"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50">
+        {/* Background layer, kept permanently mounted with backdrop-blur and
+            the bottom border always present — only opacity crossfades on
+            scroll. Toggling backdrop-blur/border on and off via conditional
+            classes forces Chromium to create/destroy the backdrop-filter
+            compositor layer on every threshold crossing, which reads as a
+            one-frame white flash right at the top of the page. Animating
+            opacity on an always-present layer avoids that entirely. */}
+        <div
+          className={`absolute inset-0 bg-background/90 backdrop-blur border-b border-white/[0.06] transition-opacity duration-300 ${
+            scrolled ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden="true"
+        />
+        <div className="relative max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2.5 group">
             <QBMark className="h-6 w-auto text-accent-dim" />
             <span className="font-brand text-lg font-extrabold tracking-tight text-white lowercase">

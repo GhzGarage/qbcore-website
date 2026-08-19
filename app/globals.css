@@ -281,12 +281,26 @@ body {
   }
 }
 
-@supports (animation-timeline: scroll(root)) {
+/* The parallax fade is tied to the hero section's own "exit" phase (a
+   view-timeline on .hero-shell), not an absolute page-scroll distance. The
+   old version used animation-timeline: scroll(root) with a fixed 0-70vh
+   range, which started dimming the hero the instant you scrolled at all
+   and had it mostly faded (opacity 0.45) well before the hero even began
+   leaving the screen — so the heading and CTAs looked washed out while
+   still front-and-center. Scoping the range to "exit" means opacity stays
+   at 1 for as long as the hero is still fully in view, and only fades as
+   it's actually scrolling out from under the fixed nav. */
+@supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
+    .hero-shell {
+      view-timeline-name: --hero-exit;
+      view-timeline-axis: block;
+    }
+
     .hero-parallax {
       animation: hero-parallax-out linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0px 70vh;
+      animation-timeline: --hero-exit;
+      animation-range: exit 0% exit 100%;
     }
 
     @keyframes hero-parallax-out {

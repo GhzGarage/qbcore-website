@@ -2,7 +2,7 @@ import QBMark from "./QBMark";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center text-center px-6 pt-32 sm:pt-36 pb-20 overflow-hidden grid-bg">
+    <section className="hero-shell relative min-h-screen flex flex-col items-center text-center px-6 pt-32 sm:pt-36 pb-20 overflow-hidden grid-bg">
       {/* Cinematic glow — crimson center, faint sky/violet accents echoing the
           platform colors used later in Cross-Platform / Platforms. */}
       <div
@@ -86,12 +86,17 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade */}
+      {/* Bottom fade — stays fully transparent for the first ~60% of the
+          band and only darkens over the last stretch, right against the
+          section's own bottom padding. The old version darkened from the
+          very top of the band, which reached up into the sub-tagline text
+          above it and made that line dim/hard to read whenever this part
+          of the page was scrolled toward the middle of the viewport. */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, transparent, var(--background))",
+            "linear-gradient(to bottom, transparent 0%, transparent 60%, var(--background) 100%)",
         }}
       />
     </section>
