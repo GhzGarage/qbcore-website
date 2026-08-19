@@ -274,6 +274,9 @@ body {
   .hero-stagger > *:nth-child(6) {
     animation-delay: 0.65s;
   }
+  .hero-stagger > *:nth-child(7) {
+    animation-delay: 0.77s;
+  }
 
   @keyframes hero-fade-up {
     to {
@@ -296,6 +299,138 @@ body {
         transform: translateY(40px) scale(0.94);
         opacity: 0.45;
       }
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Gradient "glow" primary CTA — the one confident, high-contrast action
+   on the page (hero + closing CTA). Token-driven so it always tracks
+   the current accent pair.
+   ------------------------------------------------------------------- */
+.btn-glow {
+  background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+  color: #fff;
+  box-shadow: 0 8px 30px color-mix(in oklab, var(--accent) 35%, transparent);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 12px 40px color-mix(in oklab, var(--accent) 50%, transparent);
+}
+
+/* ---------------------------------------------------------------------
+   Hero orbit diagram — the QBCore mark at the center with the three
+   platforms (FiveM / Roblox / UEFN) orbiting it, foreshadowing the
+   platform color-coding used later in Cross-Platform/Platforms. The
+   base transform positions each node correctly with zero motion; the
+   spin animation is layered on only when motion is welcome, so the
+   diagram reads clearly either way.
+   ------------------------------------------------------------------- */
+.orbit-wrap {
+  --radius: 130px;
+  position: relative;
+  width: calc(var(--radius) * 2 + 108px);
+  height: calc(var(--radius) * 2 + 108px);
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .orbit-wrap {
+    --radius: 170px;
+  }
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.orbit-ring.r2 {
+  inset: 12%;
+  border-color: color-mix(in oklab, var(--accent) 15%, transparent);
+}
+
+.orbit-ring.r3 {
+  inset: 24%;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.orbit-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 54px;
+  height: 54px;
+  margin: -27px 0 0 -27px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+  backdrop-filter: blur(6px);
+  transform: rotate(var(--angle)) translateX(var(--radius)) rotate(calc(-1 * var(--angle)));
+}
+
+.orbit-node.n1 {
+  --angle: 0deg;
+  color: var(--accent);
+  border-color: color-mix(in oklab, var(--accent) 40%, transparent);
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
+}
+
+.orbit-node.n2 {
+  --angle: 120deg;
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.orbit-node.n3 {
+  --angle: 240deg;
+  color: #a78bfa;
+  border-color: rgba(167, 139, 250, 0.4);
+  background: rgba(167, 139, 250, 0.08);
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #1a1a1d, #0a0a0b);
+  border: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
+  box-shadow:
+    0 0 40px color-mix(in oklab, var(--accent) 25%, transparent),
+    inset 0 0 20px color-mix(in oklab, var(--accent) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .orbit-node {
+    animation: orbit-spin 26s linear infinite;
+  }
+
+  @keyframes orbit-spin {
+    from {
+      transform: rotate(var(--angle)) translateX(var(--radius)) rotate(calc(-1 * var(--angle)));
+    }
+    to {
+      transform: rotate(calc(var(--angle) + 360deg)) translateX(var(--radius))
+        rotate(calc(-1 * (var(--angle) + 360deg)));
     }
   }
 }

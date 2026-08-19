@@ -54,7 +54,7 @@ export default function Vision() {
           href="https://github.com/qbcore-framework"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center h-12 px-8 rounded border border-accent/30 bg-accent/8 text-accent text-sm font-medium transition-all hover:bg-accent/15 hover:border-accent/50 hover:-translate-y-0.5 active:translate-y-0"
+          className="btn-glow inline-flex items-center justify-center h-12 px-8 rounded text-sm font-semibold transition-transform hover:-translate-y-0.5 active:translate-y-0"
         >
           View on GitHub
         </a>
