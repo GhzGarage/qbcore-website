@@ -30,9 +30,15 @@ export default function Hero() {
             <div className="orbit-ring" />
             <div className="orbit-ring r2" />
             <div className="orbit-ring r3" />
-            <div className="orbit-node n1">FVM</div>
-            <div className="orbit-node n2">RBX</div>
-            <div className="orbit-node n3">UEFN</div>
+            <div className="orbit-node n1">
+              <span className="orbit-node-label">FiveM</span>
+            </div>
+            <div className="orbit-node n2">
+              <span className="orbit-node-label">Roblox</span>
+            </div>
+            <div className="orbit-node n3">
+              <span className="orbit-node-label">UEFN</span>
+            </div>
             <div className="orbit-center">
               <QBMark className="h-11 w-11 text-accent" />
             </div>
@@ -74,7 +80,7 @@ export default function Hero() {
           </div>
 
           {/* Sub-tagline */}
-          <p className="mt-14 font-mono text-xs text-zinc-600 tracking-widest">
+          <p className="mt-14 font-mono text-xs text-zinc-500 tracking-widest">
             FiveM built the foundation. &nbsp;Roblox is the first expansion. &nbsp;UEFN is next.
           </p>
         </div>

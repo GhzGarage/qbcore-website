@@ -6,6 +6,7 @@ const platforms = [
     color: "text-accent",
     border: "border-accent/20",
     bg: "bg-accent/5",
+    glow: "hover:shadow-[0_0_36px_-8px_var(--accent)] hover:border-accent/40",
   },
   {
     name: "Roblox",
@@ -14,6 +15,7 @@ const platforms = [
     color: "text-sky-400",
     border: "border-sky-400/20",
     bg: "bg-sky-400/5",
+    glow: "hover:shadow-[0_0_36px_-8px_#38bdf8] hover:border-sky-400/40",
   },
   {
     name: "UEFN",
@@ -22,6 +24,7 @@ const platforms = [
     color: "text-violet-400",
     border: "border-violet-400/20",
     bg: "bg-violet-400/5",
+    glow: "hover:shadow-[0_0_36px_-8px_#a78bfa] hover:border-violet-400/40",
   },
 ];
 
@@ -57,20 +60,23 @@ export default function CrossPlatform() {
         <div className="@container">
           <div className="reveal-stagger grid @sm:grid-cols-3 gap-4">
             {platforms.map((p) => (
-              <div key={p.name} className={`rounded border ${p.border} ${p.bg} p-6`}>
+              <div
+                key={p.name}
+                className={`rounded border ${p.border} ${p.bg} ${p.glow} p-6 transition-all duration-300 ease-out hover:-translate-y-1`}
+              >
                 <p className={`font-mono text-xs tracking-widest uppercase font-bold mb-3 ${p.color}`}>
                   {p.name}
                 </p>
                 <div className="space-y-1">
                   <p className="text-zinc-300 text-sm font-mono">{p.lang}</p>
-                  <p className="text-zinc-600 text-xs">{p.note}</p>
+                  <p className="text-zinc-500 text-xs">{p.note}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <p className="mt-8 text-center text-xs text-zinc-600 font-mono tracking-wide">
+        <p className="mt-8 text-center text-xs text-zinc-500 font-mono tracking-wide">
           Each implementation is native to its platform. &nbsp;None are ports of another.
         </p>
       </div>

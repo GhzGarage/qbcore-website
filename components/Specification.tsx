@@ -54,7 +54,7 @@ export default function Specification() {
             {specs.map((s, i) => (
               <div key={i} className="bg-background p-7 hover:bg-white/[0.02] transition-colors">
                 <div className="flex items-start gap-3 mb-4">
-                  <span className="font-mono text-[10px] text-zinc-700 mt-1 select-none">
+                  <span className="font-mono text-[10px] text-zinc-500 mt-1 select-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-white font-medium text-sm">{s.title}</h3>

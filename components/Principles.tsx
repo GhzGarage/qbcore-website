@@ -54,7 +54,7 @@ export default function Principles() {
           <div className="reveal-stagger grid @sm:grid-cols-2 @lg:grid-cols-3 gap-px bg-white/[0.04]">
             {principles.map((p) => (
               <div key={p.number} className="bg-background p-7 hover:bg-white/[0.02] transition-colors">
-                <p className="font-mono text-[10px] text-zinc-700 mb-3 tracking-widest">{p.number}</p>
+                <p className="font-mono text-[10px] text-zinc-500 mb-3 tracking-widest">{p.number}</p>
                 <h3 className="font-brand text-white font-bold text-sm mb-3">{p.title}</h3>
                 <p className="text-zinc-500 text-sm leading-relaxed">{p.description}</p>
               </div>

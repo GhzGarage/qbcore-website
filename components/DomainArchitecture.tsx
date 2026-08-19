@@ -1,7 +1,15 @@
 export default function DomainArchitecture() {
   return (
-    <section id="domain-architecture" className="py-28 px-6 border-t border-white/[0.04]">
-      <div className="max-w-5xl mx-auto">
+    <section id="domain-architecture" className="relative py-28 px-6 border-t border-white/[0.04] overflow-hidden">
+      {/* Faint background glow, echoing the Hero/Vision treatment */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 50% 45% at 75% 50%, color-mix(in oklab, var(--accent) 4%, transparent) 0%, transparent 70%)",
+        }}
+      />
+      <div className="relative max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="reveal">
             <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
@@ -28,7 +36,7 @@ export default function DomainArchitecture() {
             <div className="flex justify-center mb-2">
               <div className="px-5 py-3 rounded border border-white/20 bg-white/[0.04] text-center">
                 <p className="text-white text-xs font-bold tracking-widest uppercase">Character</p>
-                <p className="text-zinc-600 text-[10px] mt-0.5">Persistent RP Identity</p>
+                <p className="text-zinc-500 text-[10px] mt-0.5">Persistent RP Identity</p>
               </div>
             </div>
 
@@ -45,11 +53,14 @@ export default function DomainArchitecture() {
             {/* Three domains */}
             <div className="grid grid-cols-3 gap-2 mb-4">
               {[
-                { name: "Accounts", color: "text-emerald-400", border: "border-emerald-400/20", bg: "bg-emerald-400/5" },
-                { name: "Roles", color: "text-sky-400", border: "border-sky-400/20", bg: "bg-sky-400/5" },
-                { name: "Inventory", color: "text-amber-400", border: "border-amber-400/20", bg: "bg-amber-400/5" },
+                { name: "Accounts", color: "text-emerald-400", border: "border-emerald-400/20", bg: "bg-emerald-400/5", glow: "hover:shadow-[0_0_28px_-8px_#34d399] hover:border-emerald-400/40" },
+                { name: "Roles", color: "text-sky-400", border: "border-sky-400/20", bg: "bg-sky-400/5", glow: "hover:shadow-[0_0_28px_-8px_#38bdf8] hover:border-sky-400/40" },
+                { name: "Inventory", color: "text-amber-400", border: "border-amber-400/20", bg: "bg-amber-400/5", glow: "hover:shadow-[0_0_28px_-8px_#fbbf24] hover:border-amber-400/40" },
               ].map((d) => (
-                <div key={d.name} className={`rounded border ${d.border} ${d.bg} px-2 py-3 text-center`}>
+                <div
+                  key={d.name}
+                  className={`rounded border ${d.border} ${d.bg} ${d.glow} px-2 py-3 text-center transition-all duration-300 ease-out hover:-translate-y-0.5`}
+                >
                   <p className={`text-[10px] font-bold tracking-widest uppercase ${d.color}`}>{d.name}</p>
                 </div>
               ))}
@@ -73,7 +84,7 @@ export default function DomainArchitecture() {
               ))}
             </div>
 
-            <p className="mt-5 text-center text-[10px] text-zinc-700 tracking-wide">
+            <p className="mt-5 text-center text-[10px] text-zinc-500 tracking-wide">
               Each domain owns its state and contracts.
             </p>
           </div>

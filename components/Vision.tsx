@@ -1,3 +1,5 @@
+import GitHubStars from "./GitHubStars";
+
 export default function Vision() {
   return (
     <section className="py-28 px-6 border-t border-white/[0.04] grid-bg relative overflow-hidden">
@@ -50,14 +52,17 @@ export default function Vision() {
           </p>
         </div>
 
-        <a
-          href="https://github.com/qbcore-framework"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-glow inline-flex items-center justify-center h-12 px-8 rounded text-sm font-semibold transition-transform hover:-translate-y-0.5 active:translate-y-0"
-        >
-          View on GitHub
-        </a>
+        <div className="flex flex-col items-center">
+          <GitHubStars />
+          <a
+            href="https://github.com/qbcore-framework"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-glow inline-flex items-center justify-center h-12 px-8 rounded text-sm font-semibold transition-transform hover:-translate-y-0.5 active:translate-y-0"
+          >
+            View on GitHub
+          </a>
+        </div>
       </div>
     </section>
   );

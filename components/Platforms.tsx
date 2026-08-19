@@ -11,6 +11,7 @@ const platforms = [
       "FiveM is the foundation of QBCore. It is where the framework established its architecture, ecosystem, concepts, and developer community. The expansion of QBCore does not mean FiveM is being abandoned or replaced.",
     cardBorder: "border-accent/15",
     accentColor: "text-accent",
+    glow: "hover:shadow-[0_0_44px_-10px_var(--accent)] hover:border-accent/40",
   },
   {
     name: "Roblox",
@@ -24,6 +25,7 @@ const platforms = [
       "Roblox is the first major QBCore expansion outside FiveM. It is implemented natively around Roblox services, networking, persistence, avatars, and development patterns. It is not a port of FiveM’s Lua code. The architecture feels familiar to QBCore developers while remaining natural to Roblox developers.",
     cardBorder: "border-sky-400/15",
     accentColor: "text-sky-400",
+    glow: "hover:shadow-[0_0_44px_-10px_#38bdf8] hover:border-sky-400/40",
   },
   {
     name: "UEFN",
@@ -37,6 +39,7 @@ const platforms = [
       "UEFN is the next target platform. QBCore concepts will be translated into the Fortnite ecosystem using UEFN and native Verse patterns. The implementation is in early research and development.",
     cardBorder: "border-violet-400/15",
     accentColor: "text-violet-400",
+    glow: "hover:shadow-[0_0_44px_-10px_#a78bfa] hover:border-violet-400/40",
   },
 ];
 
@@ -62,7 +65,7 @@ export default function Platforms() {
             {platforms.map((p) => (
               <div
                 key={p.name}
-                className={`rounded border ${p.cardBorder} bg-white/[0.02] p-7 flex flex-col hover:bg-white/[0.04] transition-colors`}
+                className={`rounded border ${p.cardBorder} ${p.glow} bg-white/[0.02] p-7 flex flex-col transition-all duration-300 ease-out hover:bg-white/[0.04] hover:-translate-y-1`}
               >
                 {/* Status badge */}
                 <div className="mb-5">
@@ -78,7 +81,7 @@ export default function Platforms() {
                 <h3 className={`text-2xl font-bold font-mono mb-1 ${p.accentColor}`}>
                   {p.name}
                 </h3>
-                <p className="text-zinc-600 text-xs font-mono mb-5">{p.lang}</p>
+                <p className="text-zinc-500 text-xs font-mono mb-5">{p.lang}</p>
 
                 {/* Description */}
                 <p className="text-zinc-400 text-sm leading-relaxed flex-1 mb-6">

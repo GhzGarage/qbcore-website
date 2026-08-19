@@ -29,19 +29,19 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <QBMark className="h-5 w-auto text-[#dc143c]" />
+              <QBMark className="h-5 w-auto text-accent-dim" />
               <span className="font-brand text-base font-extrabold tracking-tight text-white lowercase">
                 qbcore
               </span>
             </div>
-            <p className="text-zinc-600 text-xs leading-relaxed max-w-xs">
+            <p className="text-zinc-500 text-xs leading-relaxed max-w-xs">
               Open-source roleplay framework ecosystem. One philosophy. Multiple platforms. Built for roleplay.
             </p>
           </div>
 
           {links.map((group) => (
             <div key={group.title}>
-              <p className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest mb-4">
+              <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-4">
                 {group.title}
               </p>
               <ul className="space-y-2.5">
@@ -63,10 +63,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/[0.04] pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-zinc-700 text-xs font-mono">
+          <p className="text-zinc-500 text-xs font-mono">
             QBCore — Open Source
           </p>
-          <p className="text-zinc-700 text-xs">
+          <p className="text-zinc-500 text-xs">
             FiveM built the foundation. Roblox is the first expansion. UEFN is next.
           </p>
         </div>

@@ -89,7 +89,7 @@ export default function WhyUGC() {
               ))}
             </div>
           </div>
-          <p className="mt-6 font-mono text-xs text-zinc-600 italic">
+          <p className="mt-6 font-mono text-xs text-zinc-500 italic">
             &ldquo;The goal isn&rsquo;t to collect platform logos.&rdquo;
           </p>
         </div>

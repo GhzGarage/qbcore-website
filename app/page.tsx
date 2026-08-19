@@ -1,4 +1,5 @@
 import Nav from "@/components/Nav";
+import RevealObserver from "@/components/RevealObserver";
 import Hero from "@/components/Hero";
 import WhatIsQBCore from "@/components/WhatIsQBCore";
 import CrossPlatform from "@/components/CrossPlatform";
@@ -14,6 +15,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
+      <RevealObserver />
       <Nav />
       <main id="main-content">
         <Hero />
