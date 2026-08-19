@@ -63,10 +63,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-[#0d0d0f] text-[#e8e8e8]">
+      <body className="min-h-full flex flex-col bg-background text-[#e8e8e8]">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded focus:border focus:border-[#f43f5e]/40 focus:bg-[#0d0d0f] focus:px-4 focus:py-2 focus:text-sm focus:text-[#f43f5e]"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded focus:border focus:border-accent/40 focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:text-accent"
         >
           Skip to content
         </a>

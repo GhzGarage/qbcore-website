@@ -33,10 +33,13 @@
 }
 
 :root {
-  --background: #0d0d0f;
+  /* Brand colors expressed in OKLCH so every Tailwind opacity modifier
+     (accent/10, accent-dim/40, ...) resolves through color-mix() in a
+     perceptually-uniform space instead of naive alpha-over-hex. */
+  --background: oklch(16% 0.0042 285.92);
   --foreground: #e8e8e8;
-  --accent: #f43f5e;
-  --accent-dim: #dc143c;
+  --accent: oklch(64.5% 0.2154 16.44); /* ~#f43f5e, text/UI-safe crimson */
+  --accent-dim: oklch(57.12% 0.2219 20.09); /* true brand red #dc143c */
   --border: rgba(255, 255, 255, 0.08);
   --surface: rgba(255, 255, 255, 0.04);
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -60,6 +63,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: color-mix(in oklab, var(--accent-dim) 45%, transparent) var(--background);
+  scrollbar-width: thin;
 }
 
 body {
@@ -67,6 +72,26 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in oklab, var(--accent-dim) 45%, transparent);
+  border-radius: 999px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in oklab, var(--accent-dim) 70%, transparent);
 }
 
 .grid-bg {
@@ -77,16 +102,202 @@ body {
 }
 
 .accent-glow {
-  text-shadow: 0 0 30px rgba(244, 63, 94, 0.4);
+  text-shadow: 0 0 30px color-mix(in oklab, var(--accent) 40%, transparent);
 }
 
 .border-accent-glow {
-  box-shadow: 0 0 0 1px rgba(244, 63, 94, 0.3), 0 0 20px rgba(244, 63, 94, 0.05);
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--accent) 30%, transparent),
+    0 0 20px color-mix(in oklab, var(--accent) 5%, transparent);
 }
 
 :focus-visible {
-  outline: 2px solid rgba(244, 63, 94, 0.6);
+  outline: 2px solid color-mix(in oklab, var(--accent) 60%, transparent);
   outline-offset: 2px;
+}
+
+/* Subtle film-grain texture — a fixed, non-interactive overlay blended
+   at very low opacity for a tactile, non-flat surface. */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------------
+   Scroll-driven progress bar (native CSS scroll-timeline).
+   Hidden entirely on browsers that don't support it — no JS fallback,
+   this is a pure enhancement, never load-bearing for navigation.
+   ------------------------------------------------------------------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+  z-index: 60;
+  opacity: 0;
+}
+
+@supports (animation-timeline: scroll(root)) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-progress {
+      opacity: 1;
+      animation: scroll-progress-grow linear;
+      animation-timeline: scroll(root);
+    }
+
+    @keyframes scroll-progress-grow {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Scroll-triggered reveal animations (native CSS view-timeline).
+   Progressive enhancement: elements are fully visible by default, and
+   only animate in on browsers that support animation-timeline: view()
+   *and* when the user hasn't asked for reduced motion.
+   ------------------------------------------------------------------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      animation: reveal-in linear forwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: reveal-in linear forwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+
+    .reveal-stagger > *:nth-child(2) {
+      animation-delay: 90ms;
+    }
+    .reveal-stagger > *:nth-child(3) {
+      animation-delay: 180ms;
+    }
+    .reveal-stagger > *:nth-child(4) {
+      animation-delay: 270ms;
+    }
+    .reveal-stagger > *:nth-child(5) {
+      animation-delay: 360ms;
+    }
+    .reveal-stagger > *:nth-child(6) {
+      animation-delay: 450ms;
+    }
+
+    @keyframes reveal-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Native <dialog> / Popover API entrance & exit transitions.
+   ------------------------------------------------------------------- */
+[popover] {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    overlay 0.2s ease allow-discrete,
+    display 0.2s ease allow-discrete;
+}
+
+[popover]:popover-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@starting-style {
+  [popover]:popover-open {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Hero load-in: staggered entrance for above-the-fold content (plays
+   once on mount, unlike .reveal which is scroll-linked) plus a subtle
+   scroll-linked "settle" as the hero scrolls out of view.
+   ------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-stagger > * {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: hero-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-stagger > *:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .hero-stagger > *:nth-child(2) {
+    animation-delay: 0.16s;
+  }
+  .hero-stagger > *:nth-child(3) {
+    animation-delay: 0.29s;
+  }
+  .hero-stagger > *:nth-child(4) {
+    animation-delay: 0.41s;
+  }
+  .hero-stagger > *:nth-child(5) {
+    animation-delay: 0.53s;
+  }
+  .hero-stagger > *:nth-child(6) {
+    animation-delay: 0.65s;
+  }
+
+  @keyframes hero-fade-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@supports (animation-timeline: scroll(root)) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-parallax {
+      animation: hero-parallax-out linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px 70vh;
+    }
+
+    @keyframes hero-parallax-out {
+      to {
+        transform: translateY(40px) scale(0.94);
+        opacity: 0.45;
+      }
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -3,19 +3,19 @@ export default function DomainArchitecture() {
     <section id="domain-architecture" className="py-28 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
+          <div className="reveal">
+            <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
               Domain Architecture
             </p>
-            <h2 className="font-brand text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
               Moving away from the monolithic PlayerData model.
             </h2>
-            <p className="text-zinc-400 leading-relaxed mb-4">
+            <p className="text-pretty text-zinc-400 leading-relaxed mb-4">
               A Character is the persistent roleplay identity. It does not physically
               contain every gameplay system. Each QBCore domain owns its own concepts,
               authoritative state, rules, and supported operations.
             </p>
-            <p className="text-zinc-500 leading-relaxed">
+            <p className="text-pretty text-zinc-500 leading-relaxed">
               Domains communicate through documented contracts rather than modifying one
               another&apos;s internals. This is a deliberate architectural boundary — not a
               stylistic preference.
@@ -23,7 +23,7 @@ export default function DomainArchitecture() {
           </div>
 
           {/* Architecture diagram */}
-          <div className="font-mono text-sm">
+          <div className="reveal-stagger font-mono text-sm">
             {/* Character root */}
             <div className="flex justify-center mb-2">
               <div className="px-5 py-3 rounded border border-white/20 bg-white/[0.04] text-center">

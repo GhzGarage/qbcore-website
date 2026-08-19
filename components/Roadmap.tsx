@@ -36,10 +36,10 @@ const items = [
 
 const statusStyles: Record<string, { dot: string; text: string; border: string; bg: string }> = {
   complete: {
-    dot: "bg-[#f43f5e]",
-    text: "text-[#f43f5e]",
-    border: "border-[#f43f5e]/20",
-    bg: "bg-[#f43f5e]/5",
+    dot: "bg-accent",
+    text: "text-accent",
+    border: "border-accent/20",
+    bg: "bg-accent/5",
   },
   active: {
     dot: "bg-sky-400 animate-pulse",
@@ -59,45 +59,47 @@ export default function Roadmap() {
   return (
     <section id="roadmap" className="py-28 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
+        <div className="reveal text-center mb-16">
+          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
             Roadmap
           </p>
-          <h2 className="font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
+          <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             Where QBCore is headed.
           </h2>
-          <p className="max-w-xl mx-auto text-zinc-500 leading-relaxed text-sm">
+          <p className="text-pretty max-w-xl mx-auto text-zinc-500 leading-relaxed text-sm">
             Teams are being built around each platform. FiveM developers shape FiveM.
             Roblox developers shape Roblox. Verse developers shape UEFN.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
-          {items.map((item) => {
-            const s = statusStyles[item.status];
-            return (
-              <div
-                key={item.phase}
-                className={`rounded border ${s.border} ${s.bg} p-7`}
-              >
-                <div className="flex items-center gap-2 mb-5">
-                  <span className={`w-1.5 h-1.5 rounded-full ${s.dot}`} />
-                  <span className={`font-mono text-[10px] tracking-widest uppercase ${s.text}`}>
-                    {item.label}
-                  </span>
+        <div className="@container">
+          <div className="reveal-stagger grid @md:grid-cols-3 gap-5">
+            {items.map((item) => {
+              const s = statusStyles[item.status];
+              return (
+                <div
+                  key={item.phase}
+                  className={`rounded border ${s.border} ${s.bg} p-7`}
+                >
+                  <div className="flex items-center gap-2 mb-5">
+                    <span className={`w-1.5 h-1.5 rounded-full ${s.dot}`} />
+                    <span className={`font-mono text-[10px] tracking-widest uppercase ${s.text}`}>
+                      {item.label}
+                    </span>
+                  </div>
+                  <h3 className="font-brand text-white font-bold mb-4">{item.phase}</h3>
+                  <ul className="space-y-2">
+                    {item.points.map((pt) => (
+                      <li key={pt} className="flex items-start gap-2.5">
+                        <span className="mt-1.5 w-1 h-1 rounded-full bg-zinc-700 shrink-0" />
+                        <span className="text-zinc-500 text-sm">{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="font-brand text-white font-bold mb-4">{item.phase}</h3>
-                <ul className="space-y-2">
-                  {item.points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-2.5">
-                      <span className="mt-1.5 w-1 h-1 rounded-full bg-zinc-700 shrink-0" />
-                      <span className="text-zinc-500 text-sm">{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

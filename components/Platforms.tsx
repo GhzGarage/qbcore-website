@@ -2,15 +2,15 @@ const platforms = [
   {
     name: "FiveM",
     status: "Established",
-    statusColor: "text-[#f43f5e]",
-    statusBorder: "border-[#f43f5e]/20",
-    statusBg: "bg-[#f43f5e]/10",
+    statusColor: "text-accent",
+    statusBorder: "border-accent/20",
+    statusBg: "bg-accent/10",
     lang: "Lua + FiveM APIs",
     tagline: "FiveM built the foundation.",
     description:
       "FiveM is the foundation of QBCore. It is where the framework established its architecture, ecosystem, concepts, and developer community. The expansion of QBCore does not mean FiveM is being abandoned or replaced.",
-    cardBorder: "border-[#f43f5e]/15",
-    accentColor: "text-[#f43f5e]",
+    cardBorder: "border-accent/15",
+    accentColor: "text-accent",
   },
   {
     name: "Roblox",
@@ -44,52 +44,54 @@ export default function Platforms() {
   return (
     <section id="platforms" className="py-28 px-6 border-t border-white/[0.04] grid-bg">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
+        <div className="reveal text-center mb-16">
+          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
             Platforms
           </p>
-          <h2 className="font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
+          <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             One specification. Native everywhere.
           </h2>
-          <p className="max-w-xl mx-auto text-zinc-500 leading-relaxed">
+          <p className="text-pretty max-w-xl mx-auto text-zinc-500 leading-relaxed">
             Each platform receives its own QBCore implementation, built with that
             platform&apos;s language, APIs, and native patterns.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
-          {platforms.map((p) => (
-            <div
-              key={p.name}
-              className={`rounded border ${p.cardBorder} bg-white/[0.02] p-7 flex flex-col hover:bg-white/[0.04] transition-colors`}
-            >
-              {/* Status badge */}
-              <div className="mb-5">
-                <span
-                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[10px] font-mono font-medium tracking-wider ${p.statusColor} ${p.statusBorder} ${p.statusBg} border`}
-                >
-                  <span className="w-1 h-1 rounded-full bg-current" />
-                  {p.status}
-                </span>
+        <div className="@container">
+          <div className="reveal-stagger grid @md:grid-cols-3 gap-5">
+            {platforms.map((p) => (
+              <div
+                key={p.name}
+                className={`rounded border ${p.cardBorder} bg-white/[0.02] p-7 flex flex-col hover:bg-white/[0.04] transition-colors`}
+              >
+                {/* Status badge */}
+                <div className="mb-5">
+                  <span
+                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[10px] font-mono font-medium tracking-wider ${p.statusColor} ${p.statusBorder} ${p.statusBg} border`}
+                  >
+                    <span className="w-1 h-1 rounded-full bg-current" />
+                    {p.status}
+                  </span>
+                </div>
+
+                {/* Name */}
+                <h3 className={`text-2xl font-bold font-mono mb-1 ${p.accentColor}`}>
+                  {p.name}
+                </h3>
+                <p className="text-zinc-600 text-xs font-mono mb-5">{p.lang}</p>
+
+                {/* Description */}
+                <p className="text-zinc-400 text-sm leading-relaxed flex-1 mb-6">
+                  {p.description}
+                </p>
+
+                {/* Tagline */}
+                <p className={`font-mono text-xs ${p.accentColor} tracking-wide border-t border-white/[0.04] pt-5`}>
+                  {p.tagline}
+                </p>
               </div>
-
-              {/* Name */}
-              <h3 className={`text-2xl font-bold font-mono mb-1 ${p.accentColor}`}>
-                {p.name}
-              </h3>
-              <p className="text-zinc-600 text-xs font-mono mb-5">{p.lang}</p>
-
-              {/* Description */}
-              <p className="text-zinc-400 text-sm leading-relaxed flex-1 mb-6">
-                {p.description}
-              </p>
-
-              {/* Tagline */}
-              <p className={`font-mono text-xs ${p.accentColor} tracking-wide border-t border-white/[0.04] pt-5`}>
-                {p.tagline}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

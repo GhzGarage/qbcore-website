@@ -35,37 +35,39 @@ export default function Specification() {
   return (
     <section id="specification" className="py-28 px-6 border-t border-white/[0.04] grid-bg">
       <div className="max-w-5xl mx-auto">
-        <div className="mb-16">
-          <p className="font-mono text-xs text-[#f43f5e] tracking-widest uppercase mb-4">
+        <div className="reveal mb-16">
+          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
             QBCore Specification
           </p>
-          <h2 className="font-brand text-3xl sm:text-4xl font-bold text-white mb-5 max-w-2xl">
+          <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5 max-w-2xl">
             A formal shared specification defining what makes an implementation QBCore.
           </h2>
-          <p className="max-w-2xl text-zinc-500 leading-relaxed">
+          <p className="text-pretty max-w-2xl text-zinc-500 leading-relaxed">
             The specification defines behavior, concepts, guarantees, and boundaries. It
             does not require identical APIs or architecture between platforms. It is
             the contract that keeps the ecosystem coherent across implementations.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.04]">
-          {specs.map((s, i) => (
-            <div key={i} className="bg-[#0d0d0f] p-7 hover:bg-white/[0.02] transition-colors">
-              <div className="flex items-start gap-3 mb-4">
-                <span className="font-mono text-[10px] text-zinc-700 mt-1 select-none">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="text-white font-medium text-sm">{s.title}</h3>
+        <div className="@container">
+          <div className="reveal-stagger grid @sm:grid-cols-2 @lg:grid-cols-3 gap-px bg-white/[0.04]">
+            {specs.map((s, i) => (
+              <div key={i} className="bg-background p-7 hover:bg-white/[0.02] transition-colors">
+                <div className="flex items-start gap-3 mb-4">
+                  <span className="font-mono text-[10px] text-zinc-700 mt-1 select-none">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-white font-medium text-sm">{s.title}</h3>
+                </div>
+                <p className="text-zinc-500 text-sm leading-relaxed pl-6">{s.description}</p>
               </div>
-              <p className="text-zinc-500 text-sm leading-relaxed pl-6">{s.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        <div className="mt-10 p-5 rounded border border-[#f43f5e]/10 bg-[#f43f5e]/5">
+        <div className="reveal mt-10 p-5 rounded border border-accent/10 bg-accent/5">
           <p className="text-xs text-zinc-400 font-mono leading-relaxed">
-            <span className="text-[#f43f5e]">Note:</span> The specification describes{" "}
+            <span className="text-accent">Note:</span> The specification describes{" "}
             <em>semantic requirements</em>. It does not mandate API surface or
             implementation details. QBCore.Functions.GetPlayer(source) is an
             implementation API, not a specification concept.
