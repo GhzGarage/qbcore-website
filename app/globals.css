@@ -353,186 +353,73 @@ body {
 }
 
 /* ---------------------------------------------------------------------
-   Hero orbit diagram — the QBCore mark at the center with the platforms
-   (FiveM / Roblox / UEFN / CyberMP) orbiting it, foreshadowing the
-   platform color-coding used later in Cross-Platform/Platforms. The
-   base transform positions each node correctly with zero motion; the
-   spin animation is layered on only when motion is welcome, so the
-   diagram reads clearly either way.
+   Hero roadmap strip — a compact, left-to-right status line for the
+   platforms (FiveM / Roblox / UEFN / CyberMP). Replaces an earlier
+   concentric-ring orbit diagram that added a full ring per platform and
+   grew heavier — both visually and in render cost (four animated,
+   blurred nodes spinning continuously) — every time one was added.
+   Position on the line doubles as the roadmap order, so status doesn't
+   need a separate visual trick to encode it: filled dot + solid pill
+   for a shipped platform, hollow dot + dashed pill for one not yet
+   committed to. Fixed footprint regardless of platform count — a 5th
+   platform just adds another item to the line.
    ------------------------------------------------------------------- */
-.orbit-wrap {
-  /* Below md, all four orbit distances collapse to one shared radius —
-     there isn't room on a phone-width screen for four cleanly-separated
-     rings big enough to hold full platform names, so mobile shows one
-     ring (r2/r3/r4 are hidden in markup) rather than a cramped one. At
-     md+, r1–r4 spread out to give each platform its own ring, inner to
-     outer, visually reading as a progression — innermost is the most
-     established (FiveM), outermost is the newest/most speculative
-     (CyberMP, still under evaluation). Rings and nodes both read from
-     these same variables, so they can't drift out of sync. */
-  --hub: 72px;
-  --node: 58px;
-  --r1: 78px;
-  --r2: 78px;
-  --r3: 78px;
-  --r4: 78px;
+.roadmap-strip {
   position: relative;
-  width: calc(var(--r4) * 2 + var(--node) + 20px);
-  height: calc(var(--r4) * 2 + var(--node) + 20px);
+  max-width: 34rem;
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-  .orbit-wrap {
-    --hub: 88px;
-    --node: 68px;
-    --r1: 90px;
-    --r2: 170px;
-    --r3: 250px;
-    --r4: 330px;
-  }
-}
-
-.orbit-ring {
+.roadmap-strip-line {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  top: 6px;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.orbit-ring.ring-1 {
-  width: calc(var(--r1) * 2);
-  height: calc(var(--r1) * 2);
-}
-
-.orbit-ring.ring-2 {
-  width: calc(var(--r2) * 2);
-  height: calc(var(--r2) * 2);
-  border-color: color-mix(in oklab, var(--accent) 15%, transparent);
-}
-
-.orbit-ring.ring-3 {
-  width: calc(var(--r3) * 2);
-  height: calc(var(--r3) * 2);
-  border-color: rgba(255, 255, 255, 0.06);
-}
-
-.orbit-ring.ring-4 {
-  width: calc(var(--r4) * 2);
-  height: calc(var(--r4) * 2);
-  border-color: color-mix(in oklab, var(--moss) 12%, transparent);
-}
-
-.orbit-node {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  transform: rotate(var(--angle)) translateX(var(--node-radius)) rotate(calc(-1 * var(--angle)));
-}
-
-/* The label is a separate inner element, centered on the same point the
-   outer .orbit-node's rotate/translateX/rotate math lands on — so it
-   sits exactly on its ring regardless of the label's own size. It's a
-   true circle (not a pill) sized via --node to comfortably fit a full
-   platform name on one line. */
-.orbit-node-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  width: var(--node);
-  height: var(--node);
+.roadmap-strip-track {
+  position: relative;
   display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.roadmap-strip-item {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 0 4px;
-  white-space: nowrap;
+  gap: 10px;
+}
+
+.roadmap-strip-dot {
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  background: var(--background);
+}
+
+.roadmap-strip-pill {
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  line-height: 1;
-  border: 1px solid;
-  backdrop-filter: blur(6px);
+  padding: 5px 10px;
+  border-radius: 999px;
+  border-width: 1px;
+  border-style: solid;
+  white-space: nowrap;
 }
 
-.orbit-node.n1 {
-  --angle: 0deg;
-  --node-radius: var(--r1);
-}
-.orbit-node.n1 .orbit-node-label {
-  color: var(--accent);
-  border-color: color-mix(in oklab, var(--accent) 40%, transparent);
-  background: color-mix(in oklab, var(--accent) 14%, var(--background) 86%);
-}
-
-.orbit-node.n2 {
-  --angle: 90deg;
-  --node-radius: var(--r2);
-}
-.orbit-node.n2 .orbit-node-label {
-  color: var(--steel);
-  border-color: color-mix(in oklab, var(--steel) 45%, transparent);
-  background: color-mix(in oklab, var(--steel) 16%, var(--background) 84%);
-}
-
-.orbit-node.n3 {
-  --angle: 180deg;
-  --node-radius: var(--r3);
-}
-.orbit-node.n3 .orbit-node-label {
-  color: var(--gold);
-  border-color: color-mix(in oklab, var(--gold) 45%, transparent);
-  background: color-mix(in oklab, var(--gold) 16%, var(--background) 84%);
-}
-
-.orbit-node.n4 {
-  --angle: 270deg;
-  --node-radius: var(--r4);
-}
-.orbit-node.n4 .orbit-node-label {
-  color: var(--moss);
-  border-color: color-mix(in oklab, var(--moss) 45%, transparent);
-  background: color-mix(in oklab, var(--moss) 16%, var(--background) 84%);
-}
-
-.orbit-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: var(--hub);
-  height: var(--hub);
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #241c16, #100c09);
-  border: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
-  box-shadow:
-    0 0 40px color-mix(in oklab, var(--accent) 25%, transparent),
-    inset 0 0 20px color-mix(in oklab, var(--accent) 10%, transparent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .orbit-node {
-    animation: orbit-spin 26s linear infinite;
-  }
-
-  @keyframes orbit-spin {
-    from {
-      transform: rotate(var(--angle)) translateX(var(--node-radius)) rotate(calc(-1 * var(--angle)));
-    }
-    to {
-      transform: rotate(calc(var(--angle) + 360deg)) translateX(var(--node-radius))
-        rotate(calc(-1 * (var(--angle) + 360deg)));
-    }
-  }
+.roadmap-strip-status {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--foreground) 45%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,4 +1,29 @@
-import QBMark from "./QBMark";
+const roadmapPlatforms = [
+  {
+    name: "FiveM",
+    status: "Established",
+    dot: "border-accent bg-accent",
+    pill: "text-accent border-accent/40 bg-accent/10",
+  },
+  {
+    name: "Roblox",
+    status: "Active",
+    dot: "border-steel bg-steel",
+    pill: "text-steel border-steel/40 bg-steel/10",
+  },
+  {
+    name: "UEFN",
+    status: "R&D",
+    dot: "border-gold",
+    pill: "text-gold border-gold/40 bg-gold/5 border-dashed",
+  },
+  {
+    name: "CyberMP",
+    status: "Evaluating",
+    dot: "border-moss",
+    pill: "text-moss border-moss/40 bg-moss/5 border-dashed",
+  },
+];
 
 export default function Hero() {
   return (
@@ -26,26 +51,19 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Orbit diagram — QBCore at the center, FiveM / Roblox / UEFN / CyberMP orbiting it */}
-          <div className="orbit-wrap mb-10" aria-hidden="true">
-            <div className="orbit-ring ring-1" />
-            <div className="orbit-ring ring-2 hidden md:block" />
-            <div className="orbit-ring ring-3 hidden md:block" />
-            <div className="orbit-ring ring-4 hidden md:block" />
-            <div className="orbit-node n1">
-              <span className="orbit-node-label">FiveM</span>
-            </div>
-            <div className="orbit-node n2">
-              <span className="orbit-node-label">Roblox</span>
-            </div>
-            <div className="orbit-node n3">
-              <span className="orbit-node-label">UEFN</span>
-            </div>
-            <div className="orbit-node n4">
-              <span className="orbit-node-label">CyberMP</span>
-            </div>
-            <div className="orbit-center">
-              <QBMark className="h-11 w-11 text-accent" />
+          {/* Roadmap strip — position on the line is the roadmap order;
+              filled dot + solid pill for a shipped platform, hollow dot +
+              dashed pill for one not yet committed to. */}
+          <div className="roadmap-strip mb-10" aria-hidden="true">
+            <div className="roadmap-strip-line" />
+            <div className="roadmap-strip-track">
+              {roadmapPlatforms.map((p) => (
+                <div key={p.name} className="roadmap-strip-item">
+                  <span className={`roadmap-strip-dot ${p.dot}`} />
+                  <span className={`roadmap-strip-pill ${p.pill}`}>{p.name}</span>
+                  <span className="roadmap-strip-status">{p.status}</span>
+                </div>
+              ))}
             </div>
           </div>
 
