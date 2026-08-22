@@ -33,15 +33,21 @@
 }
 
 :root {
-  /* Brand colors expressed in OKLCH so every Tailwind opacity modifier
-     (accent/10, accent-dim/40, ...) resolves through color-mix() in a
-     perceptually-uniform space instead of naive alpha-over-hex. */
-  --background: oklch(16% 0.0042 285.92);
-  --foreground: #e8e8e8;
-  --accent: oklch(64.5% 0.2154 16.44); /* ~#f43f5e, text/UI-safe crimson */
-  --accent-dim: oklch(57.12% 0.2219 20.09); /* true brand red #dc143c */
-  --border: rgba(255, 255, 255, 0.08);
-  --surface: rgba(255, 255, 255, 0.04);
+  /* "Rusted Signal" palette — a warm near-black instead of a neutral
+     gray-black, rust-red as the primary accent (still QBCore's brand red,
+     shifted warmer/earthier), plus steel and gold as secondary accents
+     used for the Roblox / UEFN platform colors so the page reads as one
+     warm, earthy system instead of neon accents on gray. Every color here
+     still resolves through color-mix() in oklab for Tailwind's opacity
+     modifiers (accent/10, steel/20, ...), regardless of notation. */
+  --background: #17140f;
+  --foreground: #f2ece1;
+  --accent: #c1432e; /* rust red — primary brand accent */
+  --accent-dim: #8f3220; /* deeper rust, used in gradients */
+  --steel: #5c7686; /* slate-blue secondary accent (Roblox) */
+  --gold: #ce9e62; /* warm gold tertiary accent (UEFN) */
+  --border: rgba(255, 246, 238, 0.08);
+  --surface: rgba(255, 246, 238, 0.04);
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Fira Code", "Cascadia Code", Consolas, "Liberation Mono", monospace;
   --font-brand: "Gilroy", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -52,6 +58,8 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-dim: var(--accent-dim);
+  --color-steel: var(--steel);
+  --color-gold: var(--gold);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-brand: var(--font-brand);
@@ -94,12 +102,14 @@ body {
   background-color: color-mix(in oklab, var(--accent-dim) 70%, transparent);
 }
 
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
+/* Formerly a 40px grid-line texture applied to every major section —
+   dropped entirely (not just recolored). A dark background with a faint
+   grid overlay plus hairline-divided card grids is a specific, very
+   common "dev tool template" signature, and that combination (not dark
+   mode itself) was the actual resemblance problem. Sections now sit on
+   the warm solid background, with atmospheric glow only where a section
+   already has its own bespoke radial gradient (Hero, Domain Architecture,
+   Vision) rather than a repeated texture on every section. */
 
 .accent-glow {
   text-shadow: 0 0 30px color-mix(in oklab, var(--accent) 40%, transparent);
@@ -444,9 +454,9 @@ body {
   --node-radius: var(--r2);
 }
 .orbit-node.n2 .orbit-node-label {
-  color: #38bdf8;
-  border-color: rgba(56, 189, 248, 0.4);
-  background: color-mix(in oklab, #38bdf8 14%, var(--background) 86%);
+  color: var(--steel);
+  border-color: color-mix(in oklab, var(--steel) 45%, transparent);
+  background: color-mix(in oklab, var(--steel) 16%, var(--background) 84%);
 }
 
 .orbit-node.n3 {
@@ -454,9 +464,9 @@ body {
   --node-radius: var(--r3);
 }
 .orbit-node.n3 .orbit-node-label {
-  color: #a78bfa;
-  border-color: rgba(167, 139, 250, 0.4);
-  background: color-mix(in oklab, #a78bfa 14%, var(--background) 86%);
+  color: var(--gold);
+  border-color: color-mix(in oklab, var(--gold) 45%, transparent);
+  background: color-mix(in oklab, var(--gold) 16%, var(--background) 84%);
 }
 
 .orbit-center {
@@ -467,7 +477,7 @@ body {
   width: var(--hub);
   height: var(--hub);
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #1a1a1d, #0a0a0b);
+  background: radial-gradient(circle at 35% 30%, #241c16, #100c09);
   border: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
   box-shadow:
     0 0 40px color-mix(in oklab, var(--accent) 25%, transparent),

@@ -2,23 +2,23 @@ import QBMark from "./QBMark";
 
 export default function Hero() {
   return (
-    <section className="hero-shell relative min-h-screen flex flex-col items-center text-center px-6 pt-32 sm:pt-36 pb-20 overflow-hidden grid-bg">
-      {/* Cinematic glow — crimson center, faint sky/violet accents echoing the
+    <section className="hero-shell relative min-h-screen flex flex-col items-center text-center px-6 pt-32 sm:pt-36 pb-20 overflow-hidden">
+      {/* Cinematic glow — rust center, faint steel/gold accents echoing the
           platform colors used later in Cross-Platform / Platforms. */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 55% 55% at 50% 42%, color-mix(in oklab, var(--accent) 9%, transparent) 0%, transparent 70%), " +
-            "radial-gradient(ellipse 35% 35% at 15% 78%, color-mix(in oklab, #38bdf8 6%, transparent) 0%, transparent 70%), " +
-            "radial-gradient(ellipse 35% 35% at 88% 12%, color-mix(in oklab, #a78bfa 6%, transparent) 0%, transparent 70%)",
+            "radial-gradient(ellipse 55% 55% at 50% 42%, color-mix(in oklab, var(--accent) 10%, transparent) 0%, transparent 70%), " +
+            "radial-gradient(ellipse 35% 35% at 15% 78%, color-mix(in oklab, var(--steel) 7%, transparent) 0%, transparent 70%), " +
+            "radial-gradient(ellipse 35% 35% at 88% 12%, color-mix(in oklab, var(--gold) 7%, transparent) 0%, transparent 70%)",
         }}
       />
 
       <div className="hero-parallax relative z-10 max-w-4xl mx-auto">
         <div className="hero-stagger">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 mb-10 px-3 py-1.5 rounded border border-accent/20 bg-accent/5">
+          <div className="inline-flex items-center gap-2 mb-10 px-3 py-1.5 rounded-full border border-accent/20 bg-accent/5">
             <span className="block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             <span className="font-mono text-xs text-accent tracking-widest uppercase">
               Open-Source Framework Ecosystem
@@ -49,7 +49,7 @@ export default function Hero() {
             qbcore
           </h1>
 
-          <p className="text-balance font-brand text-xl sm:text-2xl md:text-3xl text-zinc-300 font-light leading-relaxed mb-4">
+          <p className="text-balance font-brand text-xl sm:text-2xl md:text-3xl text-stone-300 font-light leading-relaxed mb-4">
             One philosophy.
             <br />
             Multiple platforms.
@@ -57,7 +57,7 @@ export default function Hero() {
             <span className="text-white font-medium">Built for roleplay.</span>
           </p>
 
-          <p className="text-pretty mt-8 max-w-2xl mx-auto text-base sm:text-lg text-zinc-500 leading-relaxed">
+          <p className="text-pretty mt-8 max-w-2xl mx-auto text-base sm:text-lg text-stone-500 leading-relaxed">
             QBCore began with FiveM. Now it is evolving into a cross-platform
             standard for building roleplay experiences across user-generated
             content (UGC) ecosystems.
@@ -67,20 +67,20 @@ export default function Hero() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#specification"
-              className="btn-glow inline-flex items-center justify-center h-12 px-7 rounded text-sm font-semibold transition-transform duration-300 ease-out hover:-translate-y-0.5 active:translate-y-0"
+              className="btn-glow inline-flex items-center justify-center h-12 px-7 rounded-xl text-sm font-semibold transition-transform duration-300 ease-out hover:-translate-y-0.5 active:translate-y-0"
             >
               Explore the Specification
             </a>
             <a
               href="#platforms"
-              className="inline-flex items-center justify-center h-12 px-7 rounded border border-white/10 text-zinc-300 text-sm font-medium transition-all duration-300 ease-out hover:bg-white/[0.04] hover:border-white/20 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center h-12 px-7 rounded-xl border border-white/10 text-stone-300 text-sm font-medium transition-all duration-300 ease-out hover:bg-white/[0.04] hover:border-white/20 hover:-translate-y-0.5 active:translate-y-0"
             >
               View Platforms
             </a>
           </div>
 
           {/* Sub-tagline */}
-          <p className="mt-14 font-mono text-xs text-zinc-500 tracking-widest">
+          <p className="mt-14 font-mono text-xs text-stone-500 tracking-widest">
             FiveM built the foundation. &nbsp;Roblox is the first expansion. &nbsp;UEFN is next.
           </p>
         </div>

@@ -129,7 +129,7 @@ export default function Nav() {
                   target={l.external ? "_blank" : undefined}
                   rel={l.external ? "noopener noreferrer" : undefined}
                   className={`text-sm transition-colors ${
-                    isActive ? "text-white" : "text-zinc-400 hover:text-white"
+                    isActive ? "text-white" : "text-stone-400 hover:text-white"
                   }`}
                   aria-current={isActive ? "true" : undefined}
                 >
@@ -146,9 +146,9 @@ export default function Nav() {
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
           >
-            <span className={`block h-px w-5 bg-zinc-400 transition-all ${menuOpen ? "rotate-45 translate-y-[5px]" : ""}`} />
-            <span className={`block h-px w-5 bg-zinc-400 transition-all ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-px w-5 bg-zinc-400 transition-all ${menuOpen ? "-rotate-45 -translate-y-[5px]" : ""}`} />
+            <span className={`block h-px w-5 bg-stone-400 transition-all ${menuOpen ? "rotate-45 translate-y-[5px]" : ""}`} />
+            <span className={`block h-px w-5 bg-stone-400 transition-all ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block h-px w-5 bg-stone-400 transition-all ${menuOpen ? "-rotate-45 -translate-y-[5px]" : ""}`} />
           </button>
         </div>
 
@@ -165,7 +165,7 @@ export default function Nav() {
               href={l.href}
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noopener noreferrer" : undefined}
-              className="block py-3 text-sm text-zinc-400 hover:text-white border-b border-white/[0.04] transition-colors"
+              className="block py-3 text-sm text-stone-400 hover:text-white border-b border-white/[0.04] transition-colors"
               popoverTargetAction="hide"
               popoverTarget="mobile-menu"
             >

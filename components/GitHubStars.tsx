@@ -65,7 +65,7 @@ export default function GitHubStars() {
   return (
     <div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/20 bg-accent/5">
       <span className="text-accent text-sm leading-none">★</span>
-      <span className="font-mono text-xs text-zinc-300 tracking-wide">
+      <span className="font-mono text-xs text-stone-300 tracking-wide">
         <span className="text-white font-semibold">{stars.toLocaleString("en-US")}</span> stars
         across the QBCore ecosystem
       </span>

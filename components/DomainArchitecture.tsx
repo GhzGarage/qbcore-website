@@ -18,12 +18,12 @@ export default function DomainArchitecture() {
             <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
               Moving away from the monolithic PlayerData model.
             </h2>
-            <p className="text-pretty text-zinc-400 leading-relaxed mb-4">
+            <p className="text-pretty text-stone-400 leading-relaxed mb-4">
               A Character is the persistent roleplay identity. It does not physically
               contain every gameplay system. Each QBCore domain owns its own concepts,
               authoritative state, rules, and supported operations.
             </p>
-            <p className="text-pretty text-zinc-500 leading-relaxed">
+            <p className="text-pretty text-stone-500 leading-relaxed">
               Domains communicate through documented contracts rather than modifying one
               another&rsquo;s internals. This is a deliberate architectural boundary — not a
               stylistic preference.
@@ -34,32 +34,32 @@ export default function DomainArchitecture() {
           <div className="reveal-stagger font-mono text-sm">
             {/* Character root */}
             <div className="flex justify-center mb-2">
-              <div className="px-5 py-3 rounded border border-white/20 bg-white/[0.04] text-center">
+              <div className="px-5 py-3 rounded-xl border border-white/20 bg-white/[0.04] text-center">
                 <p className="text-white text-xs font-bold tracking-widest uppercase">Character</p>
-                <p className="text-zinc-500 text-[10px] mt-0.5">Persistent RP Identity</p>
+                <p className="text-stone-500 text-[10px] mt-0.5">Persistent RP Identity</p>
               </div>
             </div>
 
             {/* Connector line */}
             <div className="flex justify-center mb-2">
-              <div className="w-px h-5 bg-zinc-700" />
+              <div className="w-px h-5 bg-stone-700" />
             </div>
 
             {/* Branch line */}
             <div className="relative flex justify-center mb-2">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-px bg-zinc-700" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-px bg-stone-700" />
             </div>
 
             {/* Three domains */}
             <div className="grid grid-cols-3 gap-2 mb-4">
               {[
                 { name: "Accounts", color: "text-emerald-400", border: "border-emerald-400/20", bg: "bg-emerald-400/5", glow: "hover:shadow-[0_0_28px_-8px_#34d399] hover:border-emerald-400/40" },
-                { name: "Roles", color: "text-sky-400", border: "border-sky-400/20", bg: "bg-sky-400/5", glow: "hover:shadow-[0_0_28px_-8px_#38bdf8] hover:border-sky-400/40" },
+                { name: "Roles", color: "text-steel", border: "border-steel/20", bg: "bg-steel/5", glow: "hover:shadow-[0_0_28px_-8px_var(--steel)] hover:border-steel/40" },
                 { name: "Inventory", color: "text-amber-400", border: "border-amber-400/20", bg: "bg-amber-400/5", glow: "hover:shadow-[0_0_28px_-8px_#fbbf24] hover:border-amber-400/40" },
               ].map((d) => (
                 <div
                   key={d.name}
-                  className={`rounded border ${d.border} ${d.bg} ${d.glow} px-2 py-3 text-center transition-all duration-300 ease-out hover:-translate-y-0.5`}
+                  className={`rounded-xl border ${d.border} ${d.bg} ${d.glow} px-2 py-3 text-center transition-all duration-300 ease-out hover:-translate-y-0.5`}
                 >
                   <p className={`text-[10px] font-bold tracking-widest uppercase ${d.color}`}>{d.name}</p>
                 </div>
@@ -68,23 +68,23 @@ export default function DomainArchitecture() {
 
             {/* Connector */}
             <div className="flex justify-center mb-2">
-              <div className="w-px h-5 bg-zinc-700" />
+              <div className="w-px h-5 bg-stone-700" />
             </div>
 
             {/* Lower domains */}
             <div className="grid grid-cols-3 gap-2">
               {[
-                { name: "Vehicles", color: "text-zinc-300", border: "border-white/[0.06]", bg: "bg-white/[0.02]" },
-                { name: "Organizations", color: "text-zinc-300", border: "border-white/[0.06]", bg: "bg-white/[0.02]" },
-                { name: "Housing", color: "text-zinc-300", border: "border-white/[0.06]", bg: "bg-white/[0.02]" },
+                { name: "Vehicles", color: "text-stone-300", border: "border-white/[0.06]", bg: "bg-white/[0.02]" },
+                { name: "Organizations", color: "text-stone-300", border: "border-white/[0.06]", bg: "bg-white/[0.02]" },
+                { name: "Housing", color: "text-stone-300", border: "border-white/[0.06]", bg: "bg-white/[0.02]" },
               ].map((d) => (
-                <div key={d.name} className={`rounded border ${d.border} ${d.bg} px-2 py-3 text-center`}>
+                <div key={d.name} className={`rounded-xl border ${d.border} ${d.bg} px-2 py-3 text-center`}>
                   <p className={`text-[10px] font-bold tracking-widest uppercase ${d.color}`}>{d.name}</p>
                 </div>
               ))}
             </div>
 
-            <p className="mt-5 text-center text-[10px] text-zinc-500 tracking-wide">
+            <p className="mt-5 text-center text-[10px] text-stone-500 tracking-wide">
               Each domain owns its state and contracts.
             </p>
           </div>

@@ -12,19 +12,19 @@ const platforms = [
     name: "Roblox",
     lang: "Luau",
     note: "Roblox Services",
-    color: "text-sky-400",
-    border: "border-sky-400/20",
-    bg: "bg-sky-400/5",
-    glow: "hover:shadow-[0_0_36px_-8px_#38bdf8] hover:border-sky-400/40",
+    color: "text-steel",
+    border: "border-steel/20",
+    bg: "bg-steel/5",
+    glow: "hover:shadow-[0_0_36px_-8px_var(--steel)] hover:border-steel/40",
   },
   {
     name: "UEFN",
     lang: "Verse",
     note: "UEFN / Fortnite APIs",
-    color: "text-violet-400",
-    border: "border-violet-400/20",
-    bg: "bg-violet-400/5",
-    glow: "hover:shadow-[0_0_36px_-8px_#a78bfa] hover:border-violet-400/40",
+    color: "text-gold",
+    border: "border-gold/20",
+    bg: "bg-gold/5",
+    glow: "hover:shadow-[0_0_36px_-8px_var(--gold)] hover:border-gold/40",
   },
 ];
 
@@ -39,9 +39,9 @@ export default function CrossPlatform() {
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             The implementation changes.
             <br />
-            <span className="text-zinc-400">The concepts stay familiar.</span>
+            <span className="text-stone-400">The concepts stay familiar.</span>
           </h2>
-          <p className="text-pretty max-w-2xl mx-auto text-zinc-500 leading-relaxed">
+          <p className="text-pretty max-w-2xl mx-auto text-stone-500 leading-relaxed">
             Cross-platform does not mean one codebase running everywhere. Every
             platform receives its own native QBCore implementation using that
             platform&rsquo;s language, APIs, networking model, and tooling. The shared layer
@@ -50,10 +50,10 @@ export default function CrossPlatform() {
         </div>
 
         {/* Philosophy statement */}
-        <div className="reveal mb-12 p-5 rounded border border-white/[0.06] bg-white/[0.02] text-center">
-          <p className="font-mono text-sm text-zinc-300">
+        <div className="reveal mb-12 p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] text-center">
+          <p className="font-mono text-sm text-stone-300">
             <span className="text-accent">Standardize semantics</span>,{" "}
-            <span className="text-zinc-500">not syntax.</span>
+            <span className="text-stone-500">not syntax.</span>
           </p>
         </div>
 
@@ -62,21 +62,21 @@ export default function CrossPlatform() {
             {platforms.map((p) => (
               <div
                 key={p.name}
-                className={`rounded border ${p.border} ${p.bg} ${p.glow} p-6 transition-all duration-300 ease-out hover:-translate-y-1`}
+                className={`rounded-xl border ${p.border} ${p.bg} ${p.glow} p-6 transition-all duration-300 ease-out hover:-translate-y-1`}
               >
                 <p className={`font-mono text-xs tracking-widest uppercase font-bold mb-3 ${p.color}`}>
                   {p.name}
                 </p>
                 <div className="space-y-1">
-                  <p className="text-zinc-300 text-sm font-mono">{p.lang}</p>
-                  <p className="text-zinc-500 text-xs">{p.note}</p>
+                  <p className="text-stone-300 text-sm font-mono">{p.lang}</p>
+                  <p className="text-stone-500 text-xs">{p.note}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <p className="mt-8 text-center text-xs text-zinc-500 font-mono tracking-wide">
+        <p className="mt-8 text-center text-xs text-stone-500 font-mono tracking-wide">
           Each implementation is native to its platform. &nbsp;None are ports of another.
         </p>
       </div>

@@ -42,14 +42,14 @@ const statusStyles: Record<string, { dot: string; text: string; border: string; 
     bg: "bg-accent/5",
   },
   active: {
-    dot: "bg-sky-400 animate-pulse",
-    text: "text-sky-400",
-    border: "border-sky-400/20",
-    bg: "bg-sky-400/5",
+    dot: "bg-steel animate-pulse",
+    text: "text-steel",
+    border: "border-steel/20",
+    bg: "bg-steel/5",
   },
   planned: {
-    dot: "bg-zinc-600",
-    text: "text-zinc-500",
+    dot: "bg-stone-600",
+    text: "text-stone-500",
     border: "border-white/[0.06]",
     bg: "bg-white/[0.02]",
   },
@@ -66,7 +66,7 @@ export default function Roadmap() {
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             Where QBCore is headed.
           </h2>
-          <p className="text-pretty max-w-xl mx-auto text-zinc-500 leading-relaxed text-sm">
+          <p className="text-pretty max-w-xl mx-auto text-stone-500 leading-relaxed text-sm">
             Teams are being built around each platform. FiveM developers shape FiveM.
             Roblox developers shape Roblox. Verse developers shape UEFN.
           </p>
@@ -79,7 +79,7 @@ export default function Roadmap() {
               return (
                 <div
                   key={item.phase}
-                  className={`rounded border ${s.border} ${s.bg} p-7`}
+                  className={`rounded-xl border ${s.border} ${s.bg} p-7`}
                 >
                   <div className="flex items-center gap-2 mb-5">
                     <span className={`w-1.5 h-1.5 rounded-full ${s.dot}`} />
@@ -91,8 +91,8 @@ export default function Roadmap() {
                   <ul className="space-y-2">
                     {item.points.map((pt) => (
                       <li key={pt} className="flex items-start gap-2.5">
-                        <span className="mt-1.5 w-1 h-1 rounded-full bg-zinc-700 shrink-0" />
-                        <span className="text-zinc-500 text-sm">{pt}</span>
+                        <span className="mt-1.5 w-1 h-1 rounded-full bg-stone-700 shrink-0" />
+                        <span className="text-stone-500 text-sm">{pt}</span>
                       </li>
                     ))}
                   </ul>

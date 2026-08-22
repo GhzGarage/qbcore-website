@@ -39,7 +39,7 @@ const principles = [
 
 export default function Principles() {
   return (
-    <section id="principles" className="py-28 px-6 border-t border-white/[0.04] grid-bg">
+    <section id="principles" className="py-28 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="reveal text-center mb-16">
           <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
@@ -51,12 +51,15 @@ export default function Principles() {
         </div>
 
         <div className="@container">
-          <div className="reveal-stagger grid @sm:grid-cols-2 @lg:grid-cols-3 gap-px bg-white/[0.04]">
+          <div className="reveal-stagger grid @sm:grid-cols-2 @lg:grid-cols-3 gap-4">
             {principles.map((p) => (
-              <div key={p.number} className="bg-background p-7 hover:bg-white/[0.02] transition-colors">
-                <p className="font-mono text-[10px] text-zinc-500 mb-3 tracking-widest">{p.number}</p>
+              <div
+                key={p.number}
+                className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-7 shadow-[0_20px_50px_-35px_rgba(0,0,0,0.85)] transition-all duration-300 ease-out hover:bg-white/[0.05] hover:border-white/[0.14] hover:-translate-y-0.5"
+              >
+                <p className="font-mono text-[10px] text-gold/80 mb-3 tracking-widest">{p.number}</p>
                 <h3 className="font-brand text-white font-bold text-sm mb-3">{p.title}</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed">{p.description}</p>
+                <p className="text-stone-500 text-sm leading-relaxed">{p.description}</p>
               </div>
             ))}
           </div>

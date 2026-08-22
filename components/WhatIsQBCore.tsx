@@ -10,12 +10,12 @@ export default function WhatIsQBCore() {
             <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">
               Roleplay architecture sitting on top of the platform.
             </h2>
-            <p className="text-pretty text-zinc-400 leading-relaxed mb-4">
+            <p className="text-pretty text-stone-400 leading-relaxed mb-4">
               QBCore is not a game engine, a hosting provider, or a marketplace. It is
               the roleplay architecture layer that lives between the platform you build
               on and the world your creators bring to life.
             </p>
-            <p className="text-pretty text-zinc-500 leading-relaxed">
+            <p className="text-pretty text-stone-500 leading-relaxed">
               The platform handles the runtime, networking, hosting, and player
               identity. QBCore handles characters, accounts, roles, permissions,
               persistence, and the full vocabulary of roleplay systems. Creators then
@@ -25,27 +25,27 @@ export default function WhatIsQBCore() {
 
           {/* Layer diagram */}
           <div className="reveal-stagger space-y-2 font-mono text-sm">
-            <div className="rounded border border-accent/20 bg-accent/5 p-5">
+            <div className="rounded-xl border border-accent/20 bg-accent/5 p-5">
               <p className="text-accent text-xs tracking-widest uppercase font-bold mb-2">Platform</p>
-              <p className="text-zinc-400 text-xs leading-relaxed">
+              <p className="text-stone-400 text-xs leading-relaxed">
                 Runtime · Networking · Hosting · Identity · Tools · Players
               </p>
             </div>
 
-            <div className="flex items-center justify-center text-zinc-500 text-lg">↓</div>
+            <div className="flex items-center justify-center text-stone-500 text-lg">↓</div>
 
-            <div className="rounded border border-white/10 bg-white/[0.03] p-5">
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
               <p className="text-white text-xs tracking-widest uppercase font-bold mb-2">QBCore</p>
-              <p className="text-zinc-400 text-xs leading-relaxed">
+              <p className="text-stone-400 text-xs leading-relaxed">
                 Characters · Roles · Economy · Persistence · Permissions · RP Systems
               </p>
             </div>
 
-            <div className="flex items-center justify-center text-zinc-500 text-lg">↓</div>
+            <div className="flex items-center justify-center text-stone-500 text-lg">↓</div>
 
-            <div className="rounded border border-white/[0.06] bg-white/[0.02] p-5">
-              <p className="text-zinc-300 text-xs tracking-widest uppercase font-bold mb-2">Creator</p>
-              <p className="text-zinc-500 text-xs leading-relaxed">
+            <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
+              <p className="text-stone-300 text-xs tracking-widest uppercase font-bold mb-2">Creator</p>
+              <p className="text-stone-500 text-xs leading-relaxed">
                 World · Rules · Content · Stories · Gameplay
               </p>
             </div>

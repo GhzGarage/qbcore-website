@@ -16,36 +16,36 @@ const platforms = [
   {
     name: "Roblox",
     status: "In Active Development",
-    statusColor: "text-sky-400",
-    statusBorder: "border-sky-400/20",
-    statusBg: "bg-sky-400/10",
+    statusColor: "text-steel",
+    statusBorder: "border-steel/20",
+    statusBg: "bg-steel/10",
     lang: "Luau + Roblox Services",
     tagline: "The first major expansion.",
     description:
       "Roblox is the first major QBCore expansion outside FiveM. It is implemented natively around Roblox services, networking, persistence, avatars, and development patterns. It is not a port of FiveM’s Lua code. The architecture feels familiar to QBCore developers while remaining natural to Roblox developers.",
-    cardBorder: "border-sky-400/15",
-    accentColor: "text-sky-400",
-    glow: "hover:shadow-[0_0_44px_-10px_#38bdf8] hover:border-sky-400/40",
+    cardBorder: "border-steel/15",
+    accentColor: "text-steel",
+    glow: "hover:shadow-[0_0_44px_-10px_var(--steel)] hover:border-steel/40",
   },
   {
     name: "UEFN",
     status: "Research & Development",
-    statusColor: "text-violet-400",
-    statusBorder: "border-violet-400/20",
-    statusBg: "bg-violet-400/10",
+    statusColor: "text-gold",
+    statusBorder: "border-gold/20",
+    statusBg: "bg-gold/10",
     lang: "Verse + UEFN / Fortnite APIs",
     tagline: "UEFN is next.",
     description:
       "UEFN is the next target platform. QBCore concepts will be translated into the Fortnite ecosystem using UEFN and native Verse patterns. The implementation is in early research and development.",
-    cardBorder: "border-violet-400/15",
-    accentColor: "text-violet-400",
-    glow: "hover:shadow-[0_0_44px_-10px_#a78bfa] hover:border-violet-400/40",
+    cardBorder: "border-gold/15",
+    accentColor: "text-gold",
+    glow: "hover:shadow-[0_0_44px_-10px_var(--gold)] hover:border-gold/40",
   },
 ];
 
 export default function Platforms() {
   return (
-    <section id="platforms" className="py-28 px-6 border-t border-white/[0.04] grid-bg">
+    <section id="platforms" className="py-28 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="reveal text-center mb-16">
           <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
@@ -54,7 +54,7 @@ export default function Platforms() {
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             One specification. Native everywhere.
           </h2>
-          <p className="text-pretty max-w-xl mx-auto text-zinc-500 leading-relaxed">
+          <p className="text-pretty max-w-xl mx-auto text-stone-500 leading-relaxed">
             Each platform receives its own QBCore implementation, built with that
             platform&rsquo;s language, APIs, and native patterns.
           </p>
@@ -65,12 +65,12 @@ export default function Platforms() {
             {platforms.map((p) => (
               <div
                 key={p.name}
-                className={`rounded border ${p.cardBorder} ${p.glow} bg-white/[0.02] p-7 flex flex-col transition-all duration-300 ease-out hover:bg-white/[0.04] hover:-translate-y-1`}
+                className={`rounded-xl border ${p.cardBorder} ${p.glow} bg-white/[0.02] p-7 flex flex-col transition-all duration-300 ease-out hover:bg-white/[0.04] hover:-translate-y-1`}
               >
                 {/* Status badge */}
                 <div className="mb-5">
                   <span
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[10px] font-mono font-medium tracking-wider ${p.statusColor} ${p.statusBorder} ${p.statusBg} border`}
+                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-medium tracking-wider ${p.statusColor} ${p.statusBorder} ${p.statusBg} border`}
                   >
                     <span className="w-1 h-1 rounded-full bg-current" />
                     {p.status}
@@ -81,10 +81,10 @@ export default function Platforms() {
                 <h3 className={`text-2xl font-bold font-mono mb-1 ${p.accentColor}`}>
                   {p.name}
                 </h3>
-                <p className="text-zinc-500 text-xs font-mono mb-5">{p.lang}</p>
+                <p className="text-stone-500 text-xs font-mono mb-5">{p.lang}</p>
 
                 {/* Description */}
-                <p className="text-zinc-400 text-sm leading-relaxed flex-1 mb-6">
+                <p className="text-stone-400 text-sm leading-relaxed flex-1 mb-6">
                   {p.description}
                 </p>
 
