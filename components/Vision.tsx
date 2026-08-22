@@ -50,6 +50,9 @@ export default function Vision() {
           <p className="text-stone-400">
             <span className="text-gold">UEFN</span> is next.
           </p>
+          <p className="text-stone-400">
+            <span className="text-moss">CyberMP</span> is under evaluation.
+          </p>
         </div>
 
         <div className="flex flex-col items-center">

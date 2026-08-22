@@ -67,7 +67,7 @@ export default function Footer() {
             QBCore — Open Source
           </p>
           <p className="text-stone-400 text-xs">
-            FiveM built the foundation. Roblox is the first expansion. UEFN is next.
+            FiveM built the foundation. Roblox is the first expansion. UEFN is next. CyberMP is under evaluation.
           </p>
         </div>
       </div>

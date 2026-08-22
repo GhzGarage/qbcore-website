@@ -104,7 +104,7 @@ export default function Hero() {
 
           {/* Sub-tagline */}
           <p className="mt-14 font-mono text-xs text-stone-400 tracking-widest">
-            FiveM built the foundation. &nbsp;Roblox is the first expansion. &nbsp;UEFN is next.
+            FiveM built the foundation. &nbsp;Roblox is the first expansion. &nbsp;UEFN is next. &nbsp;CyberMP is under evaluation.
           </p>
         </div>
       </div>
