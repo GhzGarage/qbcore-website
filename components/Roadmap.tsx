@@ -29,6 +29,7 @@ const items = [
       "UEFN / Verse implementation",
       "Specification v1 published",
       "Platform-specific developer teams",
+      "CyberMP (Cyberpunk 2077) under evaluation",
       "Additional UGC platforms evaluated",
     ],
   },

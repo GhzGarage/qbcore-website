@@ -41,6 +41,20 @@ const platforms = [
     accentColor: "text-gold",
     glow: "hover:shadow-[0_0_44px_-10px_var(--gold)] hover:border-gold/40",
   },
+  {
+    name: "CyberMP",
+    status: "Under Evaluation",
+    statusColor: "text-moss",
+    statusBorder: "border-moss/20",
+    statusBg: "bg-moss/10",
+    lang: "Redscript + C# (.NET SDK)",
+    tagline: "CyberMP is under evaluation.",
+    description:
+      "CyberMP is a multiplayer mod for Cyberpunk 2077, currently in semi-open beta. QBCore has not committed to a CyberMP implementation — it is being evaluated for whether Night City is a genuine fit, following the same selective-expansion principle applied to every platform.",
+    cardBorder: "border-moss/15",
+    accentColor: "text-moss",
+    glow: "hover:shadow-[0_0_44px_-10px_var(--moss)] hover:border-moss/40",
+  },
 ];
 
 export default function Platforms() {
@@ -61,7 +75,7 @@ export default function Platforms() {
         </div>
 
         <div className="@container">
-          <div className="reveal-stagger grid @md:grid-cols-3 gap-5">
+          <div className="reveal-stagger grid @md:grid-cols-2 @xl:grid-cols-4 gap-5">
             {platforms.map((p) => (
               <div
                 key={p.name}

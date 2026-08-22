@@ -3,15 +3,16 @@ import QBMark from "./QBMark";
 export default function Hero() {
   return (
     <section className="hero-shell relative min-h-screen flex flex-col items-center text-center px-6 pt-32 sm:pt-36 pb-20 overflow-hidden">
-      {/* Cinematic glow — rust center, faint steel/gold accents echoing the
-          platform colors used later in Cross-Platform / Platforms. */}
+      {/* Cinematic glow — rust center, faint steel/gold/moss accents echoing
+          the platform colors used later in Cross-Platform / Platforms. */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
             "radial-gradient(ellipse 55% 55% at 50% 42%, color-mix(in oklab, var(--accent) 10%, transparent) 0%, transparent 70%), " +
             "radial-gradient(ellipse 35% 35% at 15% 78%, color-mix(in oklab, var(--steel) 7%, transparent) 0%, transparent 70%), " +
-            "radial-gradient(ellipse 35% 35% at 88% 12%, color-mix(in oklab, var(--gold) 7%, transparent) 0%, transparent 70%)",
+            "radial-gradient(ellipse 35% 35% at 88% 12%, color-mix(in oklab, var(--gold) 7%, transparent) 0%, transparent 70%), " +
+            "radial-gradient(ellipse 30% 30% at 90% 85%, color-mix(in oklab, var(--moss) 6%, transparent) 0%, transparent 70%)",
         }}
       />
 
@@ -25,11 +26,12 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Orbit diagram — QBCore at the center, FiveM / Roblox / UEFN orbiting it */}
+          {/* Orbit diagram — QBCore at the center, FiveM / Roblox / UEFN / CyberMP orbiting it */}
           <div className="orbit-wrap mb-10" aria-hidden="true">
             <div className="orbit-ring ring-1" />
             <div className="orbit-ring ring-2 hidden md:block" />
             <div className="orbit-ring ring-3 hidden md:block" />
+            <div className="orbit-ring ring-4 hidden md:block" />
             <div className="orbit-node n1">
               <span className="orbit-node-label">FiveM</span>
             </div>
@@ -38,6 +40,9 @@ export default function Hero() {
             </div>
             <div className="orbit-node n3">
               <span className="orbit-node-label">UEFN</span>
+            </div>
+            <div className="orbit-node n4">
+              <span className="orbit-node-label">CyberMP</span>
             </div>
             <div className="orbit-center">
               <QBMark className="h-11 w-11 text-accent" />

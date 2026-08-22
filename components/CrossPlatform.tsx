@@ -26,6 +26,15 @@ const platforms = [
     bg: "bg-gold/5",
     glow: "hover:shadow-[0_0_36px_-8px_var(--gold)] hover:border-gold/40",
   },
+  {
+    name: "CyberMP",
+    lang: "Redscript",
+    note: "C# (.NET SDK) — under evaluation",
+    color: "text-moss",
+    border: "border-moss/20",
+    bg: "bg-moss/5",
+    glow: "hover:shadow-[0_0_36px_-8px_var(--moss)] hover:border-moss/40",
+  },
 ];
 
 export default function CrossPlatform() {
@@ -58,7 +67,7 @@ export default function CrossPlatform() {
         </div>
 
         <div className="@container">
-          <div className="reveal-stagger grid @sm:grid-cols-3 gap-4">
+          <div className="reveal-stagger grid @sm:grid-cols-2 @xl:grid-cols-4 gap-4">
             {platforms.map((p) => (
               <div
                 key={p.name}
