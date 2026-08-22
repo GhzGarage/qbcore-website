@@ -54,7 +54,7 @@ export default function Platforms() {
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             One specification. Native everywhere.
           </h2>
-          <p className="text-pretty max-w-xl mx-auto text-stone-500 leading-relaxed">
+          <p className="text-pretty max-w-xl mx-auto text-stone-400 leading-relaxed">
             Each platform receives its own QBCore implementation, built with that
             platform&rsquo;s language, APIs, and native patterns.
           </p>
@@ -81,7 +81,7 @@ export default function Platforms() {
                 <h3 className={`text-2xl font-bold font-mono mb-1 ${p.accentColor}`}>
                   {p.name}
                 </h3>
-                <p className="text-stone-500 text-xs font-mono mb-5">{p.lang}</p>
+                <p className="text-stone-400 text-xs font-mono mb-5">{p.lang}</p>
 
                 {/* Description */}
                 <p className="text-stone-400 text-sm leading-relaxed flex-1 mb-6">

@@ -41,7 +41,7 @@ export default function CrossPlatform() {
             <br />
             <span className="text-stone-400">The concepts stay familiar.</span>
           </h2>
-          <p className="text-pretty max-w-2xl mx-auto text-stone-500 leading-relaxed">
+          <p className="text-pretty max-w-2xl mx-auto text-stone-400 leading-relaxed">
             Cross-platform does not mean one codebase running everywhere. Every
             platform receives its own native QBCore implementation using that
             platform&rsquo;s language, APIs, networking model, and tooling. The shared layer
@@ -53,7 +53,7 @@ export default function CrossPlatform() {
         <div className="reveal mb-12 p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] text-center">
           <p className="font-mono text-sm text-stone-300">
             <span className="text-accent">Standardize semantics</span>,{" "}
-            <span className="text-stone-500">not syntax.</span>
+            <span className="text-stone-400">not syntax.</span>
           </p>
         </div>
 
@@ -69,14 +69,14 @@ export default function CrossPlatform() {
                 </p>
                 <div className="space-y-1">
                   <p className="text-stone-300 text-sm font-mono">{p.lang}</p>
-                  <p className="text-stone-500 text-xs">{p.note}</p>
+                  <p className="text-stone-400 text-xs">{p.note}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <p className="mt-8 text-center text-xs text-stone-500 font-mono tracking-wide">
+        <p className="mt-8 text-center text-xs text-stone-400 font-mono tracking-wide">
           Each implementation is native to its platform. &nbsp;None are ports of another.
         </p>
       </div>

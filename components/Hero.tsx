@@ -49,7 +49,7 @@ export default function Hero() {
             qbcore
           </h1>
 
-          <p className="text-balance font-brand text-xl sm:text-2xl md:text-3xl text-stone-300 font-light leading-relaxed mb-4">
+          <p className="text-balance font-brand text-xl sm:text-2xl md:text-3xl text-stone-300 font-normal leading-relaxed mb-4">
             One philosophy.
             <br />
             Multiple platforms.
@@ -57,7 +57,7 @@ export default function Hero() {
             <span className="text-white font-medium">Built for roleplay.</span>
           </p>
 
-          <p className="text-pretty mt-8 max-w-2xl mx-auto text-base sm:text-lg text-stone-500 leading-relaxed">
+          <p className="text-pretty mt-8 max-w-2xl mx-auto text-base sm:text-lg text-stone-400 leading-relaxed">
             QBCore began with FiveM. Now it is evolving into a cross-platform
             standard for building roleplay experiences across user-generated
             content (UGC) ecosystems.
@@ -80,7 +80,7 @@ export default function Hero() {
           </div>
 
           {/* Sub-tagline */}
-          <p className="mt-14 font-mono text-xs text-stone-500 tracking-widest">
+          <p className="mt-14 font-mono text-xs text-stone-400 tracking-widest">
             FiveM built the foundation. &nbsp;Roblox is the first expansion. &nbsp;UEFN is next.
           </p>
         </div>

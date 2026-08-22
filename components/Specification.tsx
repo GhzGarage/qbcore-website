@@ -42,7 +42,7 @@ export default function Specification() {
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5 max-w-2xl">
             A formal, shared specification defining what makes an implementation QBCore.
           </h2>
-          <p className="text-pretty max-w-2xl text-stone-500 leading-relaxed">
+          <p className="text-pretty max-w-2xl text-stone-400 leading-relaxed">
             The specification defines behavior, concepts, guarantees, and boundaries. It
             does not require identical APIs or architecture between platforms. It is
             the contract that keeps the ecosystem coherent across implementations.
@@ -62,7 +62,7 @@ export default function Specification() {
                   </span>
                   <h3 className="text-white font-medium text-sm">{s.title}</h3>
                 </div>
-                <p className="text-stone-500 text-sm leading-relaxed pl-6">{s.description}</p>
+                <p className="text-stone-400 text-sm leading-relaxed pl-6">{s.description}</p>
               </div>
             ))}
           </div>

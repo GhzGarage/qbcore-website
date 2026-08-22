@@ -34,14 +34,14 @@ export default function Footer() {
                 qbcore
               </span>
             </div>
-            <p className="text-stone-500 text-xs leading-relaxed max-w-xs">
+            <p className="text-stone-400 text-xs leading-relaxed max-w-xs">
               Open-source roleplay framework ecosystem. One philosophy. Multiple platforms. Built for roleplay.
             </p>
           </div>
 
           {links.map((group) => (
             <div key={group.title}>
-              <p className="font-mono text-[10px] text-stone-500 uppercase tracking-widest mb-4">
+              <p className="font-mono text-[10px] text-stone-400 uppercase tracking-widest mb-4">
                 {group.title}
               </p>
               <ul className="space-y-2.5">
@@ -51,7 +51,7 @@ export default function Footer() {
                       href={item.href}
                       target={"external" in item && item.external ? "_blank" : undefined}
                       rel={"external" in item && item.external ? "noopener noreferrer" : undefined}
-                      className="text-stone-500 text-sm hover:text-stone-300 transition-colors"
+                      className="text-stone-400 text-sm hover:text-stone-300 transition-colors"
                     >
                       {item.label}
                     </a>
@@ -63,10 +63,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/[0.04] pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-stone-500 text-xs font-mono">
+          <p className="text-stone-400 text-xs font-mono">
             QBCore — Open Source
           </p>
-          <p className="text-stone-500 text-xs">
+          <p className="text-stone-400 text-xs">
             FiveM built the foundation. Roblox is the first expansion. UEFN is next.
           </p>
         </div>

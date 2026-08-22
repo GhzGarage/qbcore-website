@@ -19,13 +19,13 @@ export default function Vision() {
 
         {/* Emotional conclusion */}
         <div className="font-brand space-y-3 mb-12">
-          <p className="text-2xl sm:text-3xl text-stone-500 font-light">
+          <p className="text-2xl sm:text-3xl text-stone-400 font-normal">
             The languages will change.
           </p>
-          <p className="text-2xl sm:text-3xl text-stone-400 font-light">
+          <p className="text-2xl sm:text-3xl text-stone-400 font-normal">
             The APIs will change.
           </p>
-          <p className="text-2xl sm:text-3xl text-stone-300 font-light">
+          <p className="text-2xl sm:text-3xl text-stone-300 font-normal">
             The games will change.
           </p>
           <p className="text-2xl sm:text-3xl text-white font-extrabold">

@@ -49,7 +49,7 @@ const statusStyles: Record<string, { dot: string; text: string; border: string; 
   },
   planned: {
     dot: "bg-stone-600",
-    text: "text-stone-500",
+    text: "text-stone-400",
     border: "border-white/[0.06]",
     bg: "bg-white/[0.02]",
   },
@@ -66,7 +66,7 @@ export default function Roadmap() {
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             Where QBCore is headed.
           </h2>
-          <p className="text-pretty max-w-xl mx-auto text-stone-500 leading-relaxed text-sm">
+          <p className="text-pretty max-w-xl mx-auto text-stone-400 leading-relaxed text-sm">
             Teams are being built around each platform. FiveM developers shape FiveM.
             Roblox developers shape Roblox. Verse developers shape UEFN.
           </p>
@@ -92,7 +92,7 @@ export default function Roadmap() {
                     {item.points.map((pt) => (
                       <li key={pt} className="flex items-start gap-2.5">
                         <span className="mt-1.5 w-1 h-1 rounded-full bg-stone-700 shrink-0" />
-                        <span className="text-stone-500 text-sm">{pt}</span>
+                        <span className="text-stone-400 text-sm">{pt}</span>
                       </li>
                     ))}
                   </ul>

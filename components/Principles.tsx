@@ -59,7 +59,7 @@ export default function Principles() {
               >
                 <p className="font-mono text-[10px] text-gold/80 mb-3 tracking-widest">{p.number}</p>
                 <h3 className="font-brand text-white font-bold text-sm mb-3">{p.title}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed">{p.description}</p>
+                <p className="text-stone-400 text-sm leading-relaxed">{p.description}</p>
               </div>
             ))}
           </div>

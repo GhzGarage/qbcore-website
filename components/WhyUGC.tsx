@@ -28,7 +28,7 @@ export default function WhyUGC() {
             <br />
             <span className="text-stone-400">not runtime engineering.</span>
           </h2>
-          <p className="text-pretty max-w-2xl mx-auto text-stone-500 leading-relaxed">
+          <p className="text-pretty max-w-2xl mx-auto text-stone-400 leading-relaxed">
             QBCore is not attempting to become a general-purpose game engine. UGC
             platforms already provide the foundation. QBCore focuses on what sits on
             top: the architecture of roleplay.
@@ -37,7 +37,7 @@ export default function WhyUGC() {
 
         <div className="reveal-stagger grid md:grid-cols-2 gap-8 mb-14">
           <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-7">
-            <p className="font-mono text-xs text-stone-500 uppercase tracking-widest mb-5">
+            <p className="font-mono text-xs text-stone-400 uppercase tracking-widest mb-5">
               The platform provides
             </p>
             <ul className="space-y-3">
@@ -75,7 +75,7 @@ export default function WhyUGC() {
         {/* Selective expansion */}
         <div className="reveal rounded-xl border border-white/[0.06] p-7">
           <h3 className="font-brand text-white font-semibold mb-2">Selective expansion.</h3>
-          <p className="text-pretty text-stone-500 text-sm leading-relaxed mb-5">
+          <p className="text-pretty text-stone-400 text-sm leading-relaxed mb-5">
             QBCore does not need to exist on every possible platform. A future platform
             should only receive a QBCore implementation where it genuinely makes sense.
           </p>
@@ -84,12 +84,12 @@ export default function WhyUGC() {
               {criteria.map((c) => (
                 <div key={c} className="flex items-start gap-2.5">
                   <span className="mt-1.5 w-1 h-1 rounded-full bg-accent/50 shrink-0" />
-                  <p className="text-stone-500 text-xs">{c}</p>
+                  <p className="text-stone-400 text-xs">{c}</p>
                 </div>
               ))}
             </div>
           </div>
-          <p className="mt-6 font-mono text-xs text-stone-500 italic">
+          <p className="mt-6 font-mono text-xs text-stone-400 italic">
             &ldquo;The goal isn&rsquo;t to collect platform logos.&rdquo;
           </p>
         </div>

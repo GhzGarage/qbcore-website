@@ -23,7 +23,7 @@ export default function DomainArchitecture() {
               contain every gameplay system. Each QBCore domain owns its own concepts,
               authoritative state, rules, and supported operations.
             </p>
-            <p className="text-pretty text-stone-500 leading-relaxed">
+            <p className="text-pretty text-stone-400 leading-relaxed">
               Domains communicate through documented contracts rather than modifying one
               another&rsquo;s internals. This is a deliberate architectural boundary — not a
               stylistic preference.
@@ -36,7 +36,7 @@ export default function DomainArchitecture() {
             <div className="flex justify-center mb-2">
               <div className="px-5 py-3 rounded-xl border border-white/20 bg-white/[0.04] text-center">
                 <p className="text-white text-xs font-bold tracking-widest uppercase">Character</p>
-                <p className="text-stone-500 text-[10px] mt-0.5">Persistent RP Identity</p>
+                <p className="text-stone-400 text-[10px] mt-0.5">Persistent RP Identity</p>
               </div>
             </div>
 
@@ -84,7 +84,7 @@ export default function DomainArchitecture() {
               ))}
             </div>
 
-            <p className="mt-5 text-center text-[10px] text-stone-500 tracking-wide">
+            <p className="mt-5 text-center text-[10px] text-stone-400 tracking-wide">
               Each domain owns its state and contracts.
             </p>
           </div>
