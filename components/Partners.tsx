@@ -90,7 +90,7 @@ export default function Partners() {
               </linearGradient>
             </defs>
           </svg>
-          <div className="logo-marquee-track items-center gap-x-12 sm:gap-x-16">
+          <div className="logo-marquee-track items-center">
             {partners.map((p) => (
               <a
                 key={p.name}
@@ -99,7 +99,7 @@ export default function Partners() {
                 rel="noopener noreferrer"
                 aria-label={`${p.name} — ${p.category}`}
                 title={`${p.name} — ${p.category}`}
-                className="group flex items-center justify-center shrink-0 opacity-80 transition-opacity duration-300 hover:opacity-100"
+                className="logo-marquee-item group flex items-center justify-center shrink-0 opacity-80 transition-opacity duration-300 hover:opacity-100"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -111,20 +111,25 @@ export default function Partners() {
                 </svg>
               </a>
             ))}
-            {/* Cloned set: only rendered visible under prefers-reduced-motion:
-                no-preference (see .logo-marquee-clone-item in globals.css),
-                so the scrolling track has a second copy to loop into. */}
-            {partners.map((p) => (
-              <div
-                key={`${p.name}-clone`}
-                aria-hidden="true"
-                className="logo-marquee-clone-item items-center justify-center shrink-0 opacity-80"
-              >
-                <svg viewBox="0 0 24 24" fill={p.color} className="h-8 sm:h-9 w-auto">
-                  {p.svg}
-                </svg>
-              </div>
-            ))}
+            {/* Three more cloned copies of the set, only rendered visible
+                under prefers-reduced-motion: no-preference (see
+                .logo-marquee-clone-item in globals.css). Four total
+                copies — not two — keeps the track wide enough that the
+                visible window is always fully covered by logos as it
+                scrolls (see the comment in globals.css for the math). */}
+            {[1, 2, 3].map((copy) =>
+              partners.map((p) => (
+                <div
+                  key={`${p.name}-clone-${copy}`}
+                  aria-hidden="true"
+                  className="logo-marquee-item logo-marquee-clone-item items-center justify-center shrink-0 opacity-80"
+                >
+                  <svg viewBox="0 0 24 24" fill={p.color} className="h-8 sm:h-9 w-auto">
+                    {p.svg}
+                  </svg>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

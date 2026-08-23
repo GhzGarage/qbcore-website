@@ -439,6 +439,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 3rem;
 }
 
 .logo-marquee-clone-item {
@@ -457,10 +458,26 @@ body {
     );
   }
 
+  /* Four back-to-back copies of the logo set (see Partners.tsx), spaced
+     with a per-item trailing margin instead of the "gap" above — every
+     item, including the very last one in the track, carries the same
+     margin, so each copy is exactly 1/4 of the track's total width.
+     That's what makes translating by exactly -25% (one copy) land
+     pixel-perfectly on the start of the next copy with no seam or jump.
+     Four copies (not two) also guarantees the visible window is always
+     fully covered by logos: this set is narrow enough that two copies
+     left the track barely wider than the container itself, so the
+     "loop" mostly just showed everything at once with empty space
+     lopsided to one side rather than actually scrolling. */
   .logo-marquee-track {
     flex-wrap: nowrap;
     width: max-content;
-    animation: logo-marquee-scroll 34s linear infinite;
+    gap: 0;
+    animation: logo-marquee-scroll 48s linear infinite;
+  }
+
+  .logo-marquee-item {
+    margin-right: 3rem;
   }
 
   .logo-marquee:hover .logo-marquee-track {
@@ -477,7 +494,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
 }
 
