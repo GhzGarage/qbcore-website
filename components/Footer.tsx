@@ -1,4 +1,5 @@
 import QBMark from "./QBMark";
+import SocialLinks from "./SocialLinks";
 
 const links = [
   {
@@ -38,6 +39,7 @@ export default function Footer() {
             <p className="text-stone-400 text-xs leading-relaxed max-w-xs">
               Open-source roleplay framework ecosystem. One philosophy. Multiple platforms. Built for roleplay.
             </p>
+            <SocialLinks />
           </div>
 
           {links.map((group) => (
