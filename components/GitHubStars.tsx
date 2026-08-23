@@ -1,23 +1,32 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const ORGS = ["qbcore-framework", "qbcore-redm-framework"];
+const ORGS = [
+  "qbcore-framework",
+  "qbcore-fivem",
+  "qbcore-redm",
+  "qbcore-roblox",
+  "qbcore-uefn",
+  "qbcore-cybermp",
+];
 
 type Repo = { stargazers_count: number; fork: boolean };
 
 /**
- * Total stars across the QBCore GitHub orgs (FiveM + RedM), fetched live
- * from the visitor's browser (each visitor uses their own IP's
- * unauthenticated GitHub API quota, so this doesn't share a rate limit
- * across visitors the way a build-time or server-side fetch from a
- * single CI/host IP would). Forked repos are excluded so the number
- * reflects QBCore's own work, not stars accrued on the upstream project
- * a fork points to.
+ * Total stars across every QBCore GitHub org (framework + all platform
+ * orgs — FiveM, RedM, Roblox, UEFN, CyberMP), fetched live from the
+ * visitor's browser (each visitor uses their own IP's unauthenticated
+ * GitHub API quota, so this doesn't share a rate limit across visitors
+ * the way a build-time or server-side fetch from a single CI/host IP
+ * would). Forked repos are excluded so the number reflects QBCore's own
+ * work, not stars accrued on the upstream project a fork points to.
  *
  * Renders nothing until at least one org's real number is available, and
  * nothing at all if every fetch fails (offline, GitHub API down, rate
- * limited) — never a fake, zero, or stuck-loading state. If only one org
- * succeeds, its total is shown rather than blocking on the other.
+ * limited) — never a fake, zero, or stuck-loading state. If only some
+ * orgs succeed, their partial total is shown rather than blocking on the
+ * rest (e.g. an org that hasn't been created yet, like UEFN/CyberMP
+ * while they're still R&D/under evaluation).
  */
 export default function GitHubStars() {
   const [stars, setStars] = useState<number | null>(null);
@@ -29,7 +38,7 @@ export default function GitHubStars() {
       let total = 0;
       let page = 1;
       // Each org has well under 100 repos, so this normally resolves in
-      // a single request; the loop just keeps it correct if either org
+      // a single request; the loop just keeps it correct if any org
       // grows past one page.
       while (page <= 5) {
         const res = await fetch(
