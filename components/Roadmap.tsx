@@ -5,6 +5,7 @@ const items = [
     label: "Complete",
     points: [
       "FiveM framework established",
+      "RedM followed as a native extension",
       "Core architecture defined",
       "Developer ecosystem built",
       "Open-source foundation laid",
@@ -68,8 +69,9 @@ export default function Roadmap() {
             Where QBCore is headed.
           </h2>
           <p className="text-pretty max-w-xl mx-auto text-stone-400 leading-relaxed text-sm">
-            Teams are being built around each platform. FiveM developers shape FiveM.
-            Roblox developers shape Roblox. Verse developers shape UEFN.
+            Teams are being built around each platform. FiveM developers shape
+            FiveM. RedM developers shape RedM. Roblox developers shape Roblox.
+            Verse developers shape UEFN.
           </p>
         </div>
 

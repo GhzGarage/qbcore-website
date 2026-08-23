@@ -9,6 +9,15 @@ const platforms = [
     glow: "hover:shadow-[0_0_36px_-8px_var(--accent)] hover:border-accent/40",
   },
   {
+    name: "RedM",
+    lang: "Lua",
+    note: "RedM APIs",
+    color: "text-accent",
+    border: "border-accent/20",
+    bg: "bg-accent/5",
+    glow: "hover:shadow-[0_0_36px_-8px_var(--accent)] hover:border-accent/40",
+  },
+  {
     name: "Roblox",
     lang: "Luau",
     note: "Roblox Services",

@@ -14,6 +14,20 @@ const platforms = [
     glow: "hover:shadow-[0_0_44px_-10px_var(--accent)] hover:border-accent/40",
   },
   {
+    name: "RedM",
+    status: "Established",
+    statusColor: "text-accent",
+    statusBorder: "border-accent/20",
+    statusBg: "bg-accent/10",
+    lang: "Lua + RedM APIs",
+    tagline: "The next endeavor after FiveM.",
+    description:
+      "RedM is QBCore's implementation for Red Dead Redemption 2 — the endeavor that followed FiveM, built on that same Cfx.re framework. It reuses FiveM's Lua foundation and much of its architecture, adapted for RedM's APIs and setting. It is already established, not a future expansion.",
+    cardBorder: "border-accent/15",
+    accentColor: "text-accent",
+    glow: "hover:shadow-[0_0_44px_-10px_var(--accent)] hover:border-accent/40",
+  },
+  {
     name: "Roblox",
     status: "In Active Development",
     statusColor: "text-steel",

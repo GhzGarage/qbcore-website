@@ -4,7 +4,7 @@ import "./globals.css";
 const siteUrl = "https://qbcore.org";
 const title = "QBCore — One philosophy. Multiple platforms. Built for roleplay.";
 const description =
-  "QBCore is a cross-platform open-source framework ecosystem for building roleplay experiences across UGC platforms. FiveM built the foundation. Roblox is the first expansion. UEFN is next.";
+  "QBCore is a cross-platform open-source framework ecosystem for building roleplay experiences across UGC platforms. FiveM built the foundation. RedM followed. Roblox is the first expansion. UEFN is next.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "QBCore",
     "QBCore Specification",
     "FiveM framework",
+    "RedM framework",
     "Roblox roleplay",
     "UEFN Verse",
     "roleplay framework",

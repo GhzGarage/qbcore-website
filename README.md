@@ -1,7 +1,7 @@
 # QBCore Website
 
 This is the marketing/spec site for **qbcore.org** — QBCore's evolution from a FiveM
-framework into a cross-platform open-source roleplay ecosystem (FiveM → Roblox → UEFN).
+framework into a cross-platform open-source roleplay ecosystem (FiveM → RedM → Roblox → UEFN).
 It's built with [Next.js](https://nextjs.org) and deploys to GitHub Pages as a static export.
 
 ## Local development

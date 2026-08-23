@@ -45,6 +45,9 @@ export default function Vision() {
             <span className="text-accent">FiveM</span> built the foundation.
           </p>
           <p className="text-stone-400">
+            <span className="text-accent">RedM</span> followed.
+          </p>
+          <p className="text-stone-400">
             <span className="text-steel">Roblox</span> is the first expansion.
           </p>
           <p className="text-stone-400">

@@ -6,6 +6,12 @@ const roadmapPlatforms = [
     pill: "text-accent border-accent/40 bg-accent/10",
   },
   {
+    name: "RedM",
+    status: "Established",
+    dot: "border-accent bg-accent",
+    pill: "text-accent border-accent/40 bg-accent/10",
+  },
+  {
     name: "Roblox",
     status: "Active",
     dot: "border-steel bg-steel",
@@ -81,7 +87,8 @@ export default function Hero() {
           </p>
 
           <p className="text-pretty mt-8 max-w-2xl mx-auto text-base sm:text-lg text-stone-400 leading-relaxed">
-            QBCore began with FiveM. Now it is evolving into a cross-platform
+            QBCore began with FiveM. RedM followed, extending that same
+            foundation natively. Now it is evolving into a cross-platform
             standard for building roleplay experiences across user-generated
             content (UGC) ecosystems.
           </p>
@@ -104,7 +111,7 @@ export default function Hero() {
 
           {/* Sub-tagline */}
           <p className="mt-14 font-mono text-xs text-stone-400 tracking-widest">
-            FiveM built the foundation. &nbsp;Roblox is the first expansion. &nbsp;UEFN is next. &nbsp;CyberMP is under evaluation.
+            FiveM built the foundation. &nbsp;RedM followed. &nbsp;Roblox is the first expansion. &nbsp;UEFN is next. &nbsp;CyberMP is under evaluation.
           </p>
         </div>
       </div>
