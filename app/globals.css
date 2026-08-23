@@ -422,6 +422,65 @@ body {
   color: color-mix(in oklab, var(--foreground) 45%, transparent);
 }
 
+/* ---------------------------------------------------------------------
+   Logo marquee — a continuously scrolling row of partner/tooling brand
+   marks (Partners.tsx). Safe default first: a plain, fully visible,
+   wrapped/centered row with no motion and no duplicated content. The
+   infinite horizontal scroll — and the second (cloned, aria-hidden) copy
+   of the logos it needs for a seamless loop — only exist inside
+   prefers-reduced-motion: no-preference, so nothing is ever duplicated
+   on screen for anyone who doesn't see the animation.
+   ------------------------------------------------------------------- */
+.logo-marquee {
+  overflow: hidden;
+}
+
+.logo-marquee-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.logo-marquee-clone-item {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-marquee {
+    mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      black 6%,
+      black 94%,
+      transparent
+    );
+  }
+
+  .logo-marquee-track {
+    flex-wrap: nowrap;
+    width: max-content;
+    animation: logo-marquee-scroll 34s linear infinite;
+  }
+
+  .logo-marquee:hover .logo-marquee-track {
+    animation-play-state: paused;
+  }
+
+  .logo-marquee-clone-item {
+    display: flex;
+  }
+}
+
+@keyframes logo-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
