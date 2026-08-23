@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import QBMark from "./QBMark";
 
 const links = [
+  { label: "About", href: "#what-is-qbcore" },
   { label: "Specification", href: "#specification" },
   { label: "Platforms", href: "#platforms" },
   { label: "Documentation", href: "https://docs.qbcore.org/", external: true },
