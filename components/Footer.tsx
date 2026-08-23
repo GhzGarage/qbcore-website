@@ -17,6 +17,7 @@ const links = [
       { label: "GitHub", href: "https://github.com/qbcore-framework", external: true },
       { label: "Community", href: "https://discord.gg/qbcore", external: true },
       { label: "Roadmap", href: "#roadmap" },
+      { label: "Contact", href: "mailto:kakarot@qbcore.org", external: true },
     ],
   },
 ];

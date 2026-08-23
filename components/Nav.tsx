@@ -8,6 +8,7 @@ const links = [
   { label: "Documentation", href: "https://docs.qbcore.org/", external: true },
   { label: "GitHub", href: "https://github.com/qbcore-framework", external: true },
   { label: "Community", href: "https://discord.gg/qbcore", external: true },
+  { label: "Contact", href: "mailto:kakarot@qbcore.org", external: true },
 ];
 
 // Only in-page anchors participate in scroll-spy; external links never light up.
