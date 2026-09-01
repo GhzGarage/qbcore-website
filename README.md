@@ -42,6 +42,38 @@ After the build finishes, the static output is available in `out/`.
 - `app/icon.svg`, `app/favicon.ico`, and `app/apple-icon.png` provide the site favicon/touch icon
 - `public/og-image.png` is used for Open Graph / Twitter card previews (see `app/layout.tsx`)
 
+## Fonts
+
+The site's brand face is **Gilroy** (Radomir Tinkov), applied through the
+`font-brand` utility — headings and the wordmark only. Body copy uses the
+system sans stack.
+
+- `fonts-src/` holds the licensed originals. Nothing loads them; they are the
+  master copies.
+- `app/fonts/` holds subset copies, and is what `next/font/local` reads in
+  `app/layout.tsx`. Gilroy ships 466 codepoints and the site renders 74, so
+  the four weights are trimmed from 172 KB to 76 KB with identical rendering.
+- `scripts/subset-fonts.py` regenerates the subsets.
+
+Using `next/font/local` (rather than `@font-face` against `/public`) is what
+gets the fonts fingerprinted into `_next/static/media`, where they are served
+with a one-year immutable cache. Files in `public/` inherit GitHub Pages'
+10-minute default.
+
+**If a heading ever needs a character outside the subset** — a non-Latin
+script, unusual punctuation, a maths symbol — it will silently fall back to
+the system face and look wrong next to its neighbours. Add it to `EXTRA` in
+the script and regenerate:
+
+```bash
+pip install fonttools brotli
+python scripts/subset-fonts.py
+```
+
+The set already covers printable ASCII, common typographic marks, and
+Western-European accented letters, so ordinary copy edits and most partner or
+person names are safe without regenerating.
+
 ## Notes
 
 - Static export means Pages serves prebuilt HTML, CSS, and JS only
