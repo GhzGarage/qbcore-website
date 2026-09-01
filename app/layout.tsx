@@ -1,7 +1,38 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import JsonLd from "./JsonLd";
-import PreloadResources from "./PreloadResources";
+
+// Self-hosted through next/font/local rather than hand-written @font-face
+// against /public. Next fingerprints these into _next/static, where they
+// inherit the immutable one-year cache header; served from /public they got
+// GitHub Pages' 10-minute default, which was the largest single item in
+// PageSpeed's "use efficient cache lifetimes" audit.
+//
+// Preload tags are generated from this declaration, so there is no separate
+// preload component to keep in sync.
+const gilroy = localFont({
+  src: [
+    { path: "./fonts/gilroy-regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/gilroy-semibold.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/gilroy-bold.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/gilroy-extrabold.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-gilroy",
+  display: "swap",
+  // `preload` is all-or-nothing — `src` entries take only {path, weight,
+  // style}, so there is no way to preload just the two above-the-fold
+  // weights. Preloading all four puts 176 KB of font on the critical path,
+  // and only extrabold (wordmark) and regular (hero tagline) render above
+  // the fold; semibold and bold are section headings further down.
+  //
+  // Off is the safer of the two available options: it takes bytes off the
+  // critical path rather than adding them, and `display: swap` still paints
+  // the hero text immediately in the fallback face, which is what LCP
+  // measures. This is also the loading behaviour the site originally
+  // shipped with.
+  preload: false,
+});
 
 // Trailing slash matches `trailingSlash: true` in next.config.ts, so the
 // canonical, og:url and sitemap all resolve to the exact same URL.
@@ -75,9 +106,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className={`${gilroy.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <PreloadResources />
         <JsonLd />
         <a
           href="#main-content"

@@ -1,37 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Gilroy";
-  src: url("/fonts/gilroy-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("/fonts/gilroy-semibold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("/fonts/gilroy-bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("/fonts/gilroy-extrabold.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   /* "Rusted Signal" palette — a warm near-black instead of a neutral
      gray-black, rust-red as the primary accent (still QBCore's brand red,
@@ -60,7 +28,7 @@
   --surface: rgba(255, 246, 238, 0.04);
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Fira Code", "Cascadia Code", Consolas, "Liberation Mono", monospace;
-  --font-brand: "Gilroy", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-brand: var(--font-gilroy), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 @theme inline {
