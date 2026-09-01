@@ -74,8 +74,17 @@ export default function Hero() {
           </div>
 
           {/* Main heading */}
+          {/* The visible wordmark carries no keyword context on its own, so
+              the descriptive half of the h1 is screen-reader/crawler-only.
+              sr-only is absolutely positioned and clipped, so the rendered
+              wordmark is unchanged. */}
           <h1 className="font-brand text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-white lowercase leading-none mb-8">
             qbcore
+            <span className="sr-only">
+              {" "}
+              — the cross-platform open-source roleplay framework for FiveM,
+              RedM, Roblox and UEFN
+            </span>
           </h1>
 
           <p className="text-balance font-brand text-xl sm:text-2xl md:text-3xl text-stone-300 font-normal leading-relaxed mb-4">
