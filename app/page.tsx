@@ -10,6 +10,7 @@ import WhyUGC from "@/components/WhyUGC";
 import Principles from "@/components/Principles";
 import Roadmap from "@/components/Roadmap";
 import Partners from "@/components/Partners";
+import Support from "@/components/Support";
 import Vision from "@/components/Vision";
 import Footer from "@/components/Footer";
 
@@ -29,6 +30,7 @@ export default function Home() {
         <Principles />
         <Roadmap />
         <Partners />
+        <Support />
         <Vision />
       </main>
       <Footer />
