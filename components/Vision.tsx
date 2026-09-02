@@ -2,7 +2,7 @@ import GitHubStars from "./GitHubStars";
 
 export default function Vision() {
   return (
-    <section className="py-28 px-6 border-t border-white/[0.04] relative overflow-hidden">
+    <section id="vision" className="py-28 px-6 border-t border-white/[0.04] relative overflow-hidden">
       {/* Subtle glow */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -14,7 +14,7 @@ export default function Vision() {
 
       <div className="reveal-stagger relative z-10 max-w-3xl mx-auto text-center">
         <p className="font-mono text-xs text-accent tracking-widest uppercase mb-12">
-          The Vision
+          Vision
         </p>
 
         {/* Emotional conclusion */}

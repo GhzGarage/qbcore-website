@@ -1,6 +1,6 @@
 export default function DomainArchitecture() {
   return (
-    <section id="domain-architecture" className="relative py-28 px-6 border-t border-white/[0.04] overflow-hidden">
+    <section id="architecture" className="relative py-28 px-6 border-t border-white/[0.04] overflow-hidden">
       {/* Faint background glow, echoing the Hero/Vision treatment */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -13,7 +13,7 @@ export default function DomainArchitecture() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="reveal">
             <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
-              Domain Architecture
+              Architecture
             </p>
             <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
               Moving away from the monolithic PlayerData model.

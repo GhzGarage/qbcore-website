@@ -43,7 +43,7 @@ export default function Principles() {
       <div className="max-w-5xl mx-auto">
         <div className="reveal text-center mb-16">
           <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
-            Design Principles
+            Principles
           </p>
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             The values behind every decision.

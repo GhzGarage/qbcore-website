@@ -7,8 +7,8 @@ const links = [
     items: [
       { label: "Platforms", href: "#platforms" },
       { label: "Specification", href: "#specification" },
-      { label: "Domain Architecture", href: "#domain-architecture" },
-      { label: "Design Principles", href: "#principles" },
+      { label: "Architecture", href: "#architecture" },
+      { label: "Principles", href: "#principles" },
     ],
   },
   {
@@ -18,7 +18,7 @@ const links = [
       { label: "GitHub", href: "https://github.com/qbcore-framework", external: true },
       { label: "Discord", href: "https://discord.gg/qbcore", external: true },
       { label: "Roadmap", href: "#roadmap" },
-      { label: "Support QBCore", href: "#support" },
+      { label: "Funding", href: "#support" },
       { label: "Contact", href: "mailto:kakarot@qbcore.org", external: true },
     ],
   },

@@ -104,11 +104,11 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section id="partners" className="py-28 px-6 border-t border-white/[0.04]">
+    <section id="tooling" className="py-28 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="reveal text-center mb-16">
           <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
-            Ecosystem
+            Tooling
           </p>
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             We work with great tools.

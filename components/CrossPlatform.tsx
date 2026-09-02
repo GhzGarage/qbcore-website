@@ -48,11 +48,11 @@ const platforms = [
 
 export default function CrossPlatform() {
   return (
-    <section id="cross-platform" className="py-20 px-6 border-t border-white/[0.04]">
+    <section id="philosophy" className="py-20 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="reveal text-center mb-14">
           <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
-            Cross-Platform Philosophy
+            Philosophy
           </p>
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             The implementation changes.

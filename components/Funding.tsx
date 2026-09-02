@@ -26,13 +26,18 @@ const channels = [
   },
 ];
 
-export default function Support() {
+export default function Funding() {
   return (
+    // The id stays "support", not "funding", to match the label above it:
+    // qbcore.org/#support was shared with the Buy Me a Coffee team before
+    // this section was renamed, and changing the anchor would break it.
+    // Every other section's id matches its eyebrow; this one is the
+    // deliberate exception. Do not "fix" it.
     <section id="support" className="py-28 px-6 border-t border-white/[0.04]">
       <div className="max-w-5xl mx-auto">
         <div className="reveal text-center mb-16">
           <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
-            Support
+            Funding
           </p>
           <h2 className="text-balance font-brand text-3xl sm:text-4xl font-bold text-white mb-5">
             Free forever.
