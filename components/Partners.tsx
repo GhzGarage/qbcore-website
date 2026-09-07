@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import type { ReactNode } from "react";
 import bldrLogo from "@/public/bldr.png";
+import plebMastersForgeLogo from "@/public/plebmasters-forge.png";
 
 // Every other mark here is a single-path SVG we can paint with a brand or
 // foreground colour. BLDR only publishes a full-colour raster mascot — no
@@ -138,27 +139,21 @@ const partners: Partner[] = [
     img: bldrLogo,
   },
   {
-    name: "Pleb Masters",
+    name: "Pleb Masters: Forge",
     category: "GTA V Data & Creator Tools",
-    href: "https://plebmasters.de/",
-    // The umbrella over Forge, Forge Mods, Durty Cloth Tool, Smart Merge V
-    // and Forge Studios, so one entry stands in for all of them rather than
-    // giving a single organisation five slots.
+    href: "https://forge.plebmasters.de/",
+    // Pleb Masters is a single umbrella — Forge, Forge Mods, Durty Cloth
+    // Tool, Smart Merge V and Forge Studios are all theirs — so one entry
+    // stands in for all of them rather than taking five slots.
     //
-    // NOT their official logo. Theirs is a winged-emblem badge whose detail
-    // turns to mush at the 36px this row renders at, so this is a redrawn
-    // wordmark: their two-line PLEB / MASTERS lockup in their own colours,
-    // as blocky condensed caps with squared terminals and a flat-topped A,
-    // matching the character of the badge's type. Being a vector, it stays
-    // crisp at any size like the rest of the row.
-    color: "#F0F054",
-    viewBox: "0 0 522 218",
-    svg: (
-      <>
-        <path fill="var(--foreground)" d="M88 0H110V100H88ZM88 0H152V22H88ZM130 0H152V66H130ZM88 44H152V66H88ZM182 0H204V100H182ZM182 78H246V100H182ZM276 0H298V100H276ZM276 0H340V22H276ZM276 39H334V61H276ZM276 78H340V100H276ZM370 0H392V100H370ZM370 0H434V22H370ZM412 0H434V100H412ZM370 34H434V56H370ZM370 78H434V100H370Z" />
-        <path d="M0 118H22V218H0ZM56 118H78V218H56ZM22 118H56V140H22ZM28 140H50V178H28ZM88 140H110V218H88ZM130 140H152V218H130ZM88 118H152V140H88ZM88 166H152V188H88ZM162 118H226V140H162ZM162 118H184V168H162ZM162 157H226V179H162ZM204 157H226V218H204ZM162 196H226V218H162ZM236 118H300V140H236ZM257 118H279V218H257ZM310 118H332V218H310ZM310 118H374V140H310ZM310 157H368V179H310ZM310 196H374V218H310ZM384 118H406V218H384ZM384 118H448V140H384ZM426 118H448V184H426ZM384 162H448V184H384ZM408 184L430 184L448 218L426 218ZM458 118H522V140H458ZM458 118H480V168H458ZM458 157H522V179H458ZM500 157H522V218H500ZM458 196H522V218H458Z" />
-      </>
-    ),
+    // This is the text lockup from their brand kit, the asset they asked us
+    // to use. It carries both names (PLEB MASTERS over FORGE), so it covers
+    // the umbrella and the flagship at once, and it stays legible at the
+    // size this row renders at, which their emblem does not. Used exactly as
+    // supplied: their guidelines forbid retyping, recolouring, cropping or
+    // otherwise altering the artwork, so only trimming of the surrounding
+    // transparent padding and downscaling have been applied.
+    img: plebMastersForgeLogo,
   },
 ];
 
