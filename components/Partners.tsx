@@ -1,4 +1,21 @@
-const partners = [
+import Image, { type StaticImageData } from "next/image";
+import type { ReactNode } from "react";
+import bldrLogo from "@/public/bldr.png";
+
+// Every other mark here is a single-path SVG we can paint with a brand or
+// foreground colour. BLDR only publishes a full-colour raster mascot — no
+// vector anywhere on their site — so an entry carries either an inline SVG
+// or a bitmap, never both.
+type Partner = {
+  name: string;
+  category: string;
+  href: string;
+} & (
+  | { svg: ReactNode; color: string; viewBox?: string; img?: never }
+  | { img: StaticImageData; svg?: never; color?: never; viewBox?: never }
+);
+
+const partners: Partner[] = [
   {
     name: "JetBrains",
     category: "IDE & Developer Tools",
@@ -112,7 +129,56 @@ const partners = [
       <path d="M12 0c6.627 0 12 5.373 12 12 0 6.628-5.373 12-12 12S0 18.628 0 12C0 5.373 5.373 0 12 0m-.893 4.86c-.485 0-.727.001-.913.095a.87.87 0 0 0-.378.379c-.094.185-.095.428-.095.912v2.747c0 .12 0 .182.016.238q.02.075.065.138a1 1 0 0 0 .175.162l.695.564c.113.092.17.139.19.194a.22.22 0 0 1 0 .15c-.02.056-.077.102-.19.194l-.695.564a1 1 0 0 0-.175.162.4.4 0 0 0-.065.138 1 1 0 0 0-.016.238v6.019c0 .485 0 .728.095.913a.87.87 0 0 0 .378.378c.186.094.428.094.913.094h1.786c.485 0 .727 0 .913-.094a.87.87 0 0 0 .378-.378c.095-.185.095-.428.095-.913v-2.747c0-.12 0-.182-.016-.238a.4.4 0 0 0-.065-.138 1 1 0 0 0-.175-.162l-.695-.564c-.113-.092-.17-.138-.191-.193a.22.22 0 0 1 0-.152c.02-.055.078-.1.19-.193l.696-.564a1 1 0 0 0 .175-.162.4.4 0 0 0 .065-.138 1 1 0 0 0 .016-.238V6.246c0-.484 0-.727-.095-.912a.87.87 0 0 0-.378-.379c-.186-.094-.428-.094-.913-.094Z" />
     ),
   },
+  {
+    name: "BLDR",
+    category: "AI Script & Asset Generation",
+    href: "https://bldr.chat/",
+    // Their own mark, trimmed of its transparent padding and downscaled to
+    // 229x180 so it sits edge-to-edge like the vector marks around it.
+    img: bldrLogo,
+  },
 ];
+
+function PartnerMark({
+  p,
+  interactive = false,
+}: {
+  p: Partner;
+  interactive?: boolean;
+}) {
+  // Both variants render at the same height with a free width, so a wide
+  // mark (Tempest, BLDR) and a square one (GitHub) sit on the same baseline.
+  const className = `h-8 sm:h-9 w-auto${
+    interactive
+      ? " transition-transform duration-300 ease-out group-hover:scale-110"
+      : ""
+  }`;
+
+  if (p.img) {
+    return (
+      <Image
+        src={p.img}
+        alt=""
+        aria-hidden="true"
+        // Already sized for the largest DPR we render at, and the site is a
+        // static export — there is nothing for the optimizer to do.
+        unoptimized
+        className={className}
+      />
+    );
+  }
+
+  return (
+    <svg
+      viewBox={p.viewBox ?? "0 0 24 24"}
+      fill={p.color}
+      aria-hidden="true"
+      className={className}
+    >
+      {p.svg}
+    </svg>
+  );
+}
 
 export default function Partners() {
   return (
@@ -154,14 +220,7 @@ export default function Partners() {
                 title={`${p.name} — ${p.category}`}
                 className="logo-marquee-item group flex items-center justify-center shrink-0 opacity-80 transition-opacity duration-300 hover:opacity-100"
               >
-                <svg
-                  viewBox={p.viewBox ?? "0 0 24 24"}
-                  fill={p.color}
-                  aria-hidden="true"
-                  className="h-8 sm:h-9 w-auto transition-transform duration-300 ease-out group-hover:scale-110"
-                >
-                  {p.svg}
-                </svg>
+                <PartnerMark p={p} interactive />
               </a>
             ))}
             {/* Three more cloned copies of the set, only rendered visible
@@ -177,13 +236,7 @@ export default function Partners() {
                   aria-hidden="true"
                   className="logo-marquee-item logo-marquee-clone-item items-center justify-center shrink-0 opacity-80"
                 >
-                  <svg
-                    viewBox={p.viewBox ?? "0 0 24 24"}
-                    fill={p.color}
-                    className="h-8 sm:h-9 w-auto"
-                  >
-                    {p.svg}
-                  </svg>
+                  <PartnerMark p={p} />
                 </div>
               ))
             )}
