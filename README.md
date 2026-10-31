@@ -1,8 +1,6 @@
 # QBCore Website
 
-This is the marketing/spec site for **qbcore.org** — QBCore's evolution from a FiveM
-framework into a cross-platform open-source roleplay ecosystem (FiveM → RedM → Roblox → UEFN).
-It's built with [Next.js](https://nextjs.org) and deploys to GitHub Pages as a static export.
+This is the website for **qbcore.org**. QBCore is the flagship open-source roleplay framework for Mantle. The new implementation is in development, with a public repository forthcoming. The site uses [Next.js](https://nextjs.org) and deploys to GitHub Pages as a static export.
 
 ## Local development
 
@@ -40,7 +38,7 @@ After the build finishes, the static output is available in `out/`.
 
 - `app/robots.ts` and `app/sitemap.ts` generate `robots.txt` and `sitemap.xml` at build time
 - `app/icon.svg`, `app/favicon.ico`, and `app/apple-icon.png` provide the site favicon/touch icon
-- `public/og-image.png` is used for Open Graph / Twitter card previews (see `app/layout.tsx`)
+- Social previews use the title and description in `app/layout.tsx`
 
 ## Fonts
 

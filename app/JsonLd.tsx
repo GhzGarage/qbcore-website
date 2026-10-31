@@ -7,7 +7,7 @@
 const siteUrl = "https://qbcore.org/";
 
 const description =
-  "Cross-platform open-source roleplay framework. One specification across FiveM, RedM and Roblox, with UEFN next.";
+  "QBCore is the flagship open-source roleplay framework for Mantle, with a new implementation in development.";
 
 const schema = {
   "@context": "https://schema.org",
@@ -23,7 +23,7 @@ const schema = {
       description,
       sameAs: [
         "https://github.com/qbcore-framework",
-        "https://discord.gg/qbcore",
+        "https://discord.gg/mantlegame",
         "https://x.com/qbcore",
         "https://www.reddit.com/r/qbcore/",
         "https://youtube.com/@qbcoreframework",
@@ -44,11 +44,6 @@ const schema = {
       "@id": `${siteUrl}#software`,
       name: "QBCore",
       description,
-      codeRepository: "https://github.com/qbcore-framework",
-      programmingLanguage: ["Lua", "Luau"],
-      // Only platforms with shipped or in-progress implementations. UEFN is
-      // still R&D on the roadmap, so it is not claimed as a runtime here.
-      runtimePlatform: ["FiveM", "RedM", "Roblox"],
       author: { "@id": `${siteUrl}#organization` },
       isPartOf: { "@id": `${siteUrl}#website` },
     },
@@ -62,7 +57,7 @@ export default function JsonLd() {
       // Escaping `<` keeps the inlined JSON from breaking out of the script
       // tag — per the Next.js JSON-LD guide.
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(schema).replace(/</g, "\u003c"),
+        __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
       }}
     />
   );
