@@ -1,73 +1,16 @@
-import GitHubStars from "./GitHubStars";
-
 export default function Vision() {
   return (
-    <section id="vision" className="py-28 px-6 border-t border-white/[0.04] relative overflow-hidden">
-      {/* Subtle glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 50% at 50% 50%, color-mix(in oklab, var(--accent) 3%, transparent) 0%, transparent 70%)",
-        }}
-      />
-
-      <div className="reveal-stagger relative z-10 max-w-3xl mx-auto text-center">
-        <p className="font-mono text-xs text-accent tracking-widest uppercase mb-12">
-          Vision
-        </p>
-
-        {/* Emotional conclusion */}
-        <div className="font-brand space-y-3 mb-12">
-          <p className="text-2xl sm:text-3xl text-stone-400 font-normal">
-            The languages will change.
-          </p>
-          <p className="text-2xl sm:text-3xl text-stone-400 font-normal">
-            The APIs will change.
-          </p>
-          <p className="text-2xl sm:text-3xl text-stone-300 font-normal">
-            The games will change.
-          </p>
-          <p className="text-2xl sm:text-3xl text-white font-extrabold">
-            The QBCore philosophy shouldn&rsquo;t.
-          </p>
+    <section id="faq" className="py-24 sm:py-32 px-6 border-t border-white/[0.06]">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24">
+        <div className="reveal">
+          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-5">03 / What comes next</p>
+          <h2 className="text-balance font-brand text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">Follow the project.</h2>
+          <p className="text-pretty text-lg text-stone-400 leading-relaxed">Join the community for updates as QBCore takes shape.</p>
         </div>
-
-        <p className="text-pretty text-stone-400 text-base sm:text-lg leading-relaxed mb-14 max-w-2xl mx-auto">
-          QBCore is building toward a recognizable standard for roleplay development
-          across UGC ecosystems — allowing developers to learn new platforms without
-          relearning the architecture of roleplay from scratch.
-        </p>
-
-        {/* Final tagline */}
-        <div className="font-mono text-sm space-y-2 mb-12">
-          <p className="text-stone-400">
-            <span className="text-accent">FiveM</span> built the foundation.
-          </p>
-          <p className="text-stone-400">
-            <span className="text-accent">RedM</span> followed.
-          </p>
-          <p className="text-stone-400">
-            <span className="text-steel">Roblox</span> is the first expansion.
-          </p>
-          <p className="text-stone-400">
-            <span className="text-gold">UEFN</span> is next.
-          </p>
-          <p className="text-stone-400">
-            <span className="text-moss">CyberMP</span> is under evaluation.
-          </p>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <GitHubStars />
-          <a
-            href="https://github.com/qbcore-framework"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-glow inline-flex items-center justify-center h-12 px-8 rounded-xl text-sm font-semibold transition-transform hover:-translate-y-0.5 active:translate-y-0"
-          >
-            View on GitHub
-          </a>
+        <div className="reveal">
+          <div className="border-t border-white/10 py-6"><h3 className="font-brand text-xl font-bold text-white mb-3">When can I see the code?</h3><p className="text-stone-400 leading-relaxed">The new repository will appear in the QBCore GitHub organization when it is ready. There is no public release date yet.</p></div>
+          <div className="border-t border-white/10 py-6"><h3 className="font-brand text-xl font-bold text-white mb-3">Where can I follow along?</h3><p className="text-stone-400 leading-relaxed">Join the Mantle community on Discord and follow QBCore on GitHub.</p></div>
+          <div className="flex flex-col sm:flex-row gap-4 mt-5"><a href="https://github.com/qbcore-framework" target="_blank" rel="noopener noreferrer" className="btn-glow inline-flex items-center justify-center h-12 px-7 rounded-xl text-sm font-semibold">Visit GitHub</a><a href="https://discord.gg/mantlegame" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-12 px-7 rounded-xl border border-white/15 text-stone-300 text-sm font-medium hover:bg-white/[0.04]">Join Discord</a></div>
         </div>
       </div>
     </section>

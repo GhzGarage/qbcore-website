@@ -37,16 +37,16 @@ const gilroy = localFont({
 // Trailing slash matches `trailingSlash: true` in next.config.ts, so the
 // canonical, og:url and sitemap all resolve to the exact same URL.
 const siteUrl = "https://qbcore.org/";
-const title = "QBCore — One philosophy. Multiple platforms. Built for roleplay.";
+const title = "QBCore — Built for roleplay. Built for Mantle.";
 
 // Search engines truncate the description around 155-160 characters, so the
 // meta description is kept short enough to survive intact. Open Graph has no
 // such limit and keeps the longer narrative version below.
 const description =
-  "Cross-platform open-source roleplay framework. One specification across FiveM, RedM and Roblox, with UEFN next. Built for user-generated content.";
+  "QBCore is the flagship open-source roleplay framework for Mantle. The new implementation is in development, with a public repository forthcoming.";
 
 const socialDescription =
-  "QBCore is a cross-platform open-source framework ecosystem for building roleplay experiences across UGC platforms. FiveM built the foundation. RedM followed. Roblox is the first expansion. UEFN is next.";
+  "QBCore is the flagship open-source roleplay framework for Mantle. Development is underway, with a public repository to follow.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -55,17 +55,7 @@ export const metadata: Metadata = {
     template: "%s — QBCore",
   },
   description,
-  keywords: [
-    "QBCore",
-    "QBCore Specification",
-    "FiveM framework",
-    "RedM framework",
-    "Roblox roleplay",
-    "UEFN Verse",
-    "roleplay framework",
-    "open-source game framework",
-    "UGC platform development",
-  ],
+  keywords: ["QBCore", "Mantle", "roleplay framework", "open-source roleplay"],
   authors: [{ name: "QBCore" }],
   category: "technology",
   alternates: {
@@ -78,20 +68,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     title,
     description: socialDescription,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "QBCore — One philosophy. Multiple platforms. Built for roleplay.",
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title,
     description: socialDescription,
-    images: ["/og-image.png"],
   },
   // No `robots` key on purpose. `index, follow` is already the default when
   // nothing is declared, and setting it here also stamped it onto the

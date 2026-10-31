@@ -6,31 +6,16 @@ type NavLink = {
   label: string;
   href: string;
   external?: boolean;
-  // Shown in the horizontal desktop bar. Everything else is menu-only.
-  // The bar has a hard width budget: at the lg breakpoint it has 851px
-  // between the wordmark and the right edge, and these eight labels plus
-  // their 32px gaps come to 698px. Adding a ninth (Architecture, the
-  // widest remaining, at 76px + gap) needs 806px and leaves 45px of
-  // slack — too little to survive a font fallback or browser zoom. Add
-  // one here only by removing one.
+  // Primary links appear in both the desktop bar and mobile menu.
   primary?: boolean;
 };
 
 const links: NavLink[] = [
-  { label: "About", href: "#about", primary: true },
-  { label: "Philosophy", href: "#philosophy" },
-  { label: "Specification", href: "#specification", primary: true },
-  { label: "Architecture", href: "#architecture" },
-  { label: "Platforms", href: "#platforms", primary: true },
-  { label: "UGC Platforms", href: "#ugc" },
-  { label: "Principles", href: "#principles" },
-  { label: "Roadmap", href: "#roadmap", primary: true },
-  { label: "Tooling", href: "#tooling" },
-  { label: "Funding", href: "#support", primary: true },
-  { label: "Vision", href: "#vision" },
-  { label: "Documentation", href: "https://docs.qbcore.org/", external: true, primary: true },
+  { label: "Mantle", href: "#about", primary: true },
+  { label: "The framework", href: "#relationship", primary: true },
+  { label: "Next steps", href: "#faq", primary: true },
   { label: "GitHub", href: "https://github.com/qbcore-framework", external: true, primary: true },
-  { label: "Discord", href: "https://discord.gg/qbcore", external: true, primary: true },
+  { label: "Discord", href: "https://discord.gg/mantlegame", external: true, primary: true },
   { label: "Contact", href: "mailto:kakarot@qbcore.org", external: true },
 ];
 

@@ -1,78 +1,28 @@
 import QBMark from "./QBMark";
 import SocialLinks from "./SocialLinks";
 
-const links = [
-  {
-    title: "Framework",
-    items: [
-      { label: "Platforms", href: "#platforms" },
-      { label: "Specification", href: "#specification" },
-      { label: "Architecture", href: "#architecture" },
-      { label: "Principles", href: "#principles" },
-    ],
-  },
-  {
-    title: "Resources",
-    items: [
-      { label: "Documentation", href: "https://docs.qbcore.org/", external: true },
-      { label: "GitHub", href: "https://github.com/qbcore-framework", external: true },
-      { label: "Discord", href: "https://discord.gg/qbcore", external: true },
-      { label: "Roadmap", href: "#roadmap" },
-      { label: "Funding", href: "#support" },
-      { label: "Contact", href: "mailto:kakarot@qbcore.org", external: true },
-    ],
-  },
-];
-
 export default function Footer() {
   return (
     <footer className="border-t border-white/[0.06] py-14 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="grid sm:grid-cols-3 gap-10 mb-14">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <QBMark className="h-5 w-auto text-accent-dim" />
-              <span className="font-brand text-base font-extrabold tracking-tight text-white lowercase">
-                qbcore
-              </span>
-            </div>
-            <p className="text-stone-400 text-xs leading-relaxed max-w-xs">
-              Open-source roleplay framework ecosystem. One philosophy. Multiple platforms. Built for roleplay.
-            </p>
-            <SocialLinks />
+      <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-10">
+        <div>
+          <div className="flex items-center gap-2 mb-3">
+            <QBMark className="h-5 w-auto text-accent-dim" />
+            <span className="font-brand text-base font-extrabold tracking-tight text-white lowercase">qbcore</span>
           </div>
-
-          {links.map((group) => (
-            <div key={group.title}>
-              <p className="font-mono text-[10px] text-stone-400 uppercase tracking-widest mb-4">
-                {group.title}
-              </p>
-              <ul className="space-y-2.5">
-                {group.items.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      target={"external" in item && item.external ? "_blank" : undefined}
-                      rel={"external" in item && item.external ? "noopener noreferrer" : undefined}
-                      className="text-stone-400 text-sm hover:text-stone-300 transition-colors"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <p className="text-stone-400 text-xs leading-relaxed max-w-xs">The flagship open-source roleplay framework for Mantle.</p>
+          <SocialLinks />
         </div>
-
-        <div className="border-t border-white/[0.04] pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-stone-400 text-xs font-mono">
-            QBCore — Open Source
-          </p>
-          <p className="text-stone-400 text-xs">
-            FiveM built the foundation. RedM followed. Roblox is the first expansion. UEFN is next. CyberMP is under evaluation.
-          </p>
+        <div>
+          <p className="font-mono text-[10px] text-stone-400 uppercase tracking-widest mb-4">Explore</p>
+          <ul className="space-y-2.5 text-sm text-stone-400">
+            <li><a href="#about" className="hover:text-stone-300">Mantle</a></li>
+            <li><a href="#relationship" className="hover:text-stone-300">The framework</a></li>
+            <li><a href="#faq" className="hover:text-stone-300">Next steps</a></li>
+            <li><a href="https://github.com/qbcore-framework" target="_blank" rel="noopener noreferrer" className="hover:text-stone-300">GitHub</a></li>
+            <li><a href="https://discord.gg/mantlegame" target="_blank" rel="noopener noreferrer" className="hover:text-stone-300">Discord</a></li>
+            <li><a href="mailto:kakarot@qbcore.org" className="hover:text-stone-300">Contact</a></li>
+          </ul>
         </div>
       </div>
     </footer>
